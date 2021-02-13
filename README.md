@@ -1,27 +1,37 @@
-# TourismManagementSystemAngular
+# Tourism Management System
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.0.
+## About this project
 
-## Development server
+This project developed as a solution for an emerging tourism company under single proprietorship. 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+##Abstract 
 
-## Code scaffolding
+Abstract
+Sri Lanka is one of the most popular destinations for travelers. 
+So, there are so many foreigners' visits, Sri Lanka, all the time. 
+As a result of that the tourism industry is popular in Sri Lanka. 
+This particular company is an inbound tourism company that manages all the accommodations,
+places to visit, and many more to visitors.
+Currently, they are using the not efficient and time-consuming method to manage their tour packages. 
+ 
+So, they wanted a system that can manage tours, get the total cost, and calculate the profit at the same time. 
+It would be great if they have an internal system to do all the things that they expect. 
+So, this project is a solution to their current method.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Project
 
-## Build
+(this section will be updated soon)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Project development related details
 
-## Running unit tests
+(this section will be updated soon)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Technology Stack
 
-## Running end-to-end tests
+(this section will be updated soon)
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
+## License
+Copyright (c) Dhanusha Perera. All rights reserved.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Licensed under the MIT license.

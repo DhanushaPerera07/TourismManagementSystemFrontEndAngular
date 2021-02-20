@@ -1,0 +1,53 @@
+.main-header-component {
+
+}
+
+.header {
+  //justify-content: center;
+  //height: 15vh;
+  align-items: center;
+  //background-color: #4267B2;
+  border-bottom: 1px solid lightgrey;
+  position: sticky;
+  top: 0;
+}
+
+.header_left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  & img {
+    width: 7rem;
+  }
+}
+
+.header_center {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  list-style: none;
+  justify-content: space-around;
+  padding: 0;
+  margin: 0;
+
+  & li {
+    cursor: pointer;
+    padding: 0 1rem;
+  }
+
+  & li:hover{
+  transform: scale(1.1);
+}
+}
+
+.header_right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+
+  & img {
+    width: 3.75rem;
+  }
+}

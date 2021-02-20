@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { SignInComponent } from './signin/sign-in.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CustomerComponent } from './customer/customer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainNavComponent,
-    SignInComponent
+    SignInComponent,
+    CustomerComponent
   ],
   imports: [
     BrowserModule,

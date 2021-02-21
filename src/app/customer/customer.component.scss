@@ -1,0 +1,18 @@
+.customer-section{
+  margin-top: 2rem;
+}
+
+.customer_header{
+  display: flex;
+  flex-direction: column;
+  //justify-content: center;
+  //align-items: center;
+
+  & input{
+    width: 30vw;
+  }
+}
+
+.divider{
+  margin-bottom: 2rem;
+}

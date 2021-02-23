@@ -1,5 +1,6 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {AfterViewInit, Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
+import {MatSort} from '@angular/material/sort';
 import {Customer} from '../../interface/customer';
 
 /* sample customer data */
@@ -31,30 +32,36 @@ const CUSTOMER_DATA: Customer[] = [
   templateUrl: './customer-table.component.html',
   styleUrls: ['./customer-table.component.scss']
 })
-export class CustomerTableComponent implements OnInit {
+export class CustomerTableComponent implements OnInit, AfterViewInit {
 
   /* Table columns for the Customer table */
   displayedColumns: string[] = [
-    'Customer ID',
-    'Name',
-    'Nationality',
-    'Country',
-    'Passport No',
-    'Email',
-    'Phone',
-    'Add Date',
-    'Options'
+    'id',
+    'name',
+    'nationality',
+    'country',
+    'passportNo',
+    'email',
+    'phone',
+    'add Date',
+    'options'
   ];
 
   /* Data source for the customer table */
   dataSource = new MatTableDataSource(CUSTOMER_DATA);
+
+  @ViewChild(MatSort)
+  sort!: MatSort;
 
   constructor() {
   }
 
 
   ngOnInit(): void {
+  }
 
+  ngAfterViewInit(): void {
+    this.dataSource.sort = this.sort;
   }
 
   /**

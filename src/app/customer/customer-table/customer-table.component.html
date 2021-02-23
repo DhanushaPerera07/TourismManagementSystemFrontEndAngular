@@ -1,55 +1,55 @@
-<table [dataSource]="dataSource" class="mat-elevation-z8" mat-table>
+<table [dataSource]="dataSource" class="mat-elevation-z8" mat-table matSort>
 
   <!-- Customer ID column -->
-  <ng-container matColumnDef="Customer ID">
-    <th *matHeaderCellDef mat-header-cell>Customer ID</th>
+  <ng-container matColumnDef="id">
+    <th *matHeaderCellDef mat-header-cell mat-sort-header>Customer ID</th>
     <td *matCellDef="let element" mat-cell>C{{element.id}}</td>
   </ng-container>
 
   <!-- Customer Name column -->
-  <ng-container matColumnDef="Name">
+  <ng-container matColumnDef="name">
     <th *matHeaderCellDef mat-header-cell>Name</th>
     <td *matCellDef="let element" mat-cell>{{element.name}}</td>
   </ng-container>
 
   <!-- Customer Nationality column -->
-  <ng-container matColumnDef="Nationality">
+  <ng-container matColumnDef="nationality">
     <th *matHeaderCellDef mat-header-cell>Nationality</th>
     <td *matCellDef="let element" mat-cell>{{element.nationality}}</td>
   </ng-container>
 
   <!-- Customer Passport No column -->
-  <ng-container matColumnDef="Passport No">
+  <ng-container matColumnDef="passportNo">
     <th *matHeaderCellDef mat-header-cell>Passport No</th>
     <td *matCellDef="let element" mat-cell>{{element.passportNo}}</td>
   </ng-container>
 
   <!-- Customer Email column -->
-  <ng-container matColumnDef="Email">
+  <ng-container matColumnDef="email">
     <th *matHeaderCellDef mat-header-cell>Email</th>
     <td *matCellDef="let element" mat-cell>{{element.email}}</td>
   </ng-container>
 
   <!-- Customer Phone column -->
-  <ng-container matColumnDef="Phone">
+  <ng-container matColumnDef="phone">
     <th *matHeaderCellDef mat-header-cell>Phone</th>
     <td *matCellDef="let element" mat-cell>{{element.phone}}</td>
   </ng-container>
 
   <!-- Customer Country column -->
-  <ng-container matColumnDef="Country">
-    <th *matHeaderCellDef mat-header-cell>Country</th>
+  <ng-container matColumnDef="country">
+    <th *matHeaderCellDef mat-header-cell mat-sort-header>Country</th>
     <td *matCellDef="let element" mat-cell>{{element.country}}</td>
   </ng-container>
 
   <!-- Customer Added Date column -->
-  <ng-container matColumnDef="Add Date">
-    <th *matHeaderCellDef mat-header-cell>Added Date</th>
+  <ng-container matColumnDef="add Date">
+    <th *matHeaderCellDef mat-header-cell mat-sort-header>Added Date</th>
     <td *matCellDef="let element" mat-cell>{{element.addedDate.toLocaleString()}}</td>
   </ng-container>
 
   <!-- Options column -->
-  <ng-container matColumnDef="Options">
+  <ng-container matColumnDef="options">
     <th *matHeaderCellDef mat-header-cell>Option</th>
     <td *matCellDef="let element" mat-cell>
       <div class="customer_table_options">

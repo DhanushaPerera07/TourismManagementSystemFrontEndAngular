@@ -3,10 +3,37 @@
 <div class="customer-section">
   <div class="container">
     <div class="customer_header">
-      <h5>Manage Customer</h5>
+      <section class="customer_header_top">
+        <h4>Manage Customer</h4>
+        <div class="customer_search">
+          <mat-form-field floatLabel="never">
+            <input (keyup)="applyFilter($event.target);" matInput placeholder="Search a Customer">
+          </mat-form-field>
+          <button type="button" class="btn btn-search">
+            <i class="bi bi-search"></i>
+            Search
+          </button>
+        </div>
+        <button type="button"
+                class="btn btn-add">
+          <i class="bi bi-plus-square"></i>
+          Add</button>
+      </section>
+
       <mat-divider class="divider"></mat-divider>
-      <input type="text">
+      <section class="customer_header_content">
+
+      </section>
 
     </div>
+
+    <section class="customer_section_title">
+      <p>Customers List</p>
+    </section>
+
+    <!-- customer table -->
+    <section class="customer_table">
+      <app-customer-table></app-customer-table>
+    </section>
   </div>
 </div>

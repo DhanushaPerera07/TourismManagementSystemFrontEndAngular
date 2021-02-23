@@ -8,7 +8,14 @@ import {SignInComponent} from './signin/sign-in.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {CustomerComponent} from './customer/customer.component';
 import {MatDividerModule} from '@angular/material/divider';
-import { NotFoundComponent } from './not-found/not-found.component';
+import {NotFoundComponent} from './not-found/not-found.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatTableModule} from '@angular/material/table';
+import { CustomerTableComponent } from './customer/customer-table/customer-table.component';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -16,13 +23,21 @@ import { NotFoundComponent } from './not-found/not-found.component';
     MainNavComponent,
     SignInComponent,
     CustomerComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    CustomerTableComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatDividerModule
+    FormsModule,
+    ReactiveFormsModule, // autocomplete
+    MatDividerModule,
+    MatAutocompleteModule,
+    MatTableModule,
+    MatMenuModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

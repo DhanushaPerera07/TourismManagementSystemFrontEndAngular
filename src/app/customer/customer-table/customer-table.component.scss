@@ -27,3 +27,16 @@ table{
 .icon-delete{
   color: crimson;
 }
+
+
+th{
+  background-color: #343a40;
+  color: white;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+

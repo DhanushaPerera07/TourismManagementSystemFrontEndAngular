@@ -1,6 +1,7 @@
 import {AfterViewInit, Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
 import {MatSort} from '@angular/material/sort';
+import {MatPaginator} from '@angular/material/paginator';
 import {Customer} from '../../interface/customer';
 
 /* sample customer data */
@@ -53,14 +54,20 @@ export class CustomerTableComponent implements OnInit, AfterViewInit {
   @ViewChild(MatSort)
   sort!: MatSort;
 
+  @ViewChild(MatPaginator)
+  paginator!: MatPaginator;
+
   constructor() {
   }
 
 
   ngOnInit(): void {
+    /* table data pagination process */
+    this.dataSource.paginator = this.paginator;
   }
 
   ngAfterViewInit(): void {
+    /* table data sorting process */
     this.dataSource.sort = this.sort;
   }
 

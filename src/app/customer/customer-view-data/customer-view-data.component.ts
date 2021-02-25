@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit, ViewChild} from '@angular/core';
+import {Customer} from '../../interface/customer';
 
 @Component({
   selector: 'app-customer-view-data',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CustomerViewDataComponent implements OnInit {
 
-  constructor() { }
+  @Input()
+  customer!: Customer;
+
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

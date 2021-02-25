@@ -1,32 +1,10 @@
-import {AfterViewInit, Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
 import {MatSort} from '@angular/material/sort';
 import {MatPaginator} from '@angular/material/paginator';
-import {Customer} from '../../interface/customer';
+import {Router} from '@angular/router';
+import {CustomerService} from '../../shared/service/customer.service';
 
-/* sample customer data */
-const CUSTOMER_DATA: Customer[] = [
-  {
-    id: 1,
-    name: 'John Doe',
-    nationality: 'American',
-    passportNo: '1234567A',
-    email: 'john.doe@gmail.com',
-    phone: '202 555 0152 ',
-    country: 'America',
-    addedDate: new Date(Date.now())
-  },
-  {
-    id: 2,
-    name: 'Samntha Ashley',
-    nationality: 'Canadian',
-    passportNo: '446565678C',
-    email: 'samantha@gmail.com',
-    phone: '064 789 4516 ',
-    country: 'Canada',
-    addedDate: new Date(Date.now())
-  }
-];
 
 @Component({
   selector: 'app-customer-table',
@@ -48,16 +26,18 @@ export class CustomerTableComponent implements OnInit, AfterViewInit {
     'options'
   ];
 
-  /* Data source for the customer table */
-  dataSource = new MatTableDataSource(CUSTOMER_DATA);
-
   @ViewChild(MatSort)
   sort!: MatSort;
 
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
 
-  constructor() {
+  /* Data source for the customer table */
+  dataSource = new MatTableDataSource(this.customerService.customerList);
+
+
+  constructor(private route: Router,
+              private customerService: CustomerService) {
   }
 
 
@@ -84,7 +64,7 @@ export class CustomerTableComponent implements OnInit, AfterViewInit {
    * display information related to particular selected customer record
    */
   viewCustomerRecord(row: any): void {
-    /* open a dialog box */
-    /* show all information related to customer record in that dialog box */
+    this.customerService.customer = row; // row = selected customer
+    this.route.navigateByUrl('customer/view/' + row.id);
   }
 }

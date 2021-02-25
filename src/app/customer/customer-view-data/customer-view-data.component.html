@@ -5,37 +5,37 @@
 
     <div class="row">
       <div class="col-3">ID</div>
-      <div class="col-3">C001</div>
+      <div class="col-3">C00{{ customer.id }}</div>
     </div>
 
     <div class="row">
       <div class="col-3">Name</div>
-      <div class="col-3">John Doe</div>
+      <div class="col-3">{{ customer.name }}</div>
     </div>
 
     <div class="row">
       <div class="col-3">Country</div>
-      <div class="col-3">USA</div>
+      <div class="col-3">{{ customer.country}}</div>
     </div>
 
     <div class="row">
       <div class="col-3">Nationality</div>
-      <div class="col-3">American</div>
+      <div class="col-3">{{ customer.nationality }}</div>
     </div>
 
     <div class="row">
       <div class="col-3">Passport No</div>
-      <div class="col-3">USA11223665</div>
+      <div class="col-3">{{ customer.passportNo }}</div>
     </div>
 
     <div class="row">
       <div class="col-3">Email</div>
-      <div class="col-3"> john.doe@gmail.com</div>
+      <div class="col-3">{{ customer.email }}</div>
     </div>
 
     <div class="row">
       <div class="col-3">Phone</div>
-      <div class="col-3">{{ '757894591' | formatPhoneNumber: 'LK' }}</div>
+      <div class="col-3">{{ customer.phone | formatPhoneNumber: 'US' }}</div>
     </div>
   </div>
 
@@ -47,12 +47,12 @@
 
     <div class="row">
       <div class="col-3">Added Date</div>
-      <div class="col-3">2/25/2021, 1:29:02 PM</div>
+      <div class="col-3">{{ customer.addedDate | date: 'medium' }}</div>
     </div>
 
     <div class="row">
       <div class="col-3">Added By</div>
-      <div class="col-3">Prasad Madusanka (E001)</div>
+      <div class="col-3">{{ customer.addedBy.name }}</div>
     </div>
   </div>
 

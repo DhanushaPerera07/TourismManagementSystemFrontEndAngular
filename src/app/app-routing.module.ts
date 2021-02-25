@@ -28,7 +28,14 @@ const routes: Routes = [
       {
         path: '',
         component: ManageCustomerComponent,
-        data: { breadcrumb: 'Customer'}
+        data: { breadcrumb: 'Customer list'},
+        // children: [
+        //   {
+        //     path: 'view/:id',
+        //     component: ViewCustomerComponent,
+        //     data: { breadcrumb: 'View'},
+        //   }
+        // ]
       },
       {
         path: 'view/:id',

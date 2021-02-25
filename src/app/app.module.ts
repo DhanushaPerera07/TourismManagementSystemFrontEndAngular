@@ -22,6 +22,7 @@ import { CustomerViewDataComponent } from './customer/customer-view-data/custome
 import { CustomerSearchTableComponent } from './customer/customer-search-table/customer-search-table.component';
 import { ManageCustomerComponent } from './customer/main/manage-customer/manage-customer.component';
 import { ViewCustomerComponent } from './customer/main/view-customer/view-customer.component';
+import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { ViewCustomerComponent } from './customer/main/view-customer/view-custom
     CustomerViewDataComponent,
     CustomerSearchTableComponent,
     ManageCustomerComponent,
-    ViewCustomerComponent
+    ViewCustomerComponent,
+    BreadcrumbComponent
   ],
   imports: [
     BrowserModule,

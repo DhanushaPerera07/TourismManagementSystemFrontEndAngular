@@ -24,6 +24,7 @@ import { ManageCustomerComponent } from './customer/main/manage-customer/manage-
 import { ViewCustomerComponent } from './customer/main/view-customer/view-customer.component';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import {BreadcrumbModule} from 'angular-crumbs';
+import { FormatPhoneNumberPipe } from './pipe/format-phone-number.pipe';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import {BreadcrumbModule} from 'angular-crumbs';
     CustomerSearchTableComponent,
     ManageCustomerComponent,
     ViewCustomerComponent,
-    BreadcrumbComponent
+    BreadcrumbComponent,
+    FormatPhoneNumberPipe
   ],
   imports: [
     BrowserModule,

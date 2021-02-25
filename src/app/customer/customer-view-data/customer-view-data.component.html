@@ -1,14 +1,60 @@
-<nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="#">Manage Customer</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Customer</li>
-  </ol>
-</nav>
-
-<p>Customer Details</p>
-
 <div class="customer-view-data-container">
+  <div class="customer-details">
+    <h5>Customer Details</h5>
+    <mat-divider class="divider"></mat-divider>
 
-  
+    <div class="row">
+      <div class="col-3">ID</div>
+      <div class="col-3">C001</div>
+    </div>
+
+    <div class="row">
+      <div class="col-3">Name</div>
+      <div class="col-3">John Doe</div>
+    </div>
+
+    <div class="row">
+      <div class="col-3">Country</div>
+      <div class="col-3">USA</div>
+    </div>
+
+    <div class="row">
+      <div class="col-3">Nationality</div>
+      <div class="col-3">American</div>
+    </div>
+
+    <div class="row">
+      <div class="col-3">Passport No</div>
+      <div class="col-3">USA11223665</div>
+    </div>
+
+    <div class="row">
+      <div class="col-3">Email</div>
+      <div class="col-3"> john.doe@gmail.com</div>
+    </div>
+
+    <div class="row">
+      <div class="col-3">Phone</div>
+      <div class="col-3">{{ '757894591' | formatPhoneNumber: 'LK' }}</div>
+    </div>
+  </div>
+
+
+  <!-- additional details -->
+  <div class="additional-details">
+    <h5>Additional Details</h5>
+    <mat-divider class="divider"></mat-divider>
+
+    <div class="row">
+      <div class="col-3">Added Date</div>
+      <div class="col-3">2/25/2021, 1:29:02 PM</div>
+    </div>
+
+    <div class="row">
+      <div class="col-3">Added By</div>
+      <div class="col-3">Prasad Madusanka (E001)</div>
+    </div>
+  </div>
 
 </div>
+

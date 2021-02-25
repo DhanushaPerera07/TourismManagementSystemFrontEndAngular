@@ -17,19 +17,23 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    component: MainNavComponent
+    component: MainNavComponent,
+    data: { breadcrumb: 'Home'}
   },
   {
     path: 'customer',
     component: CustomerComponent,
+    data: { breadcrumb: 'Manage Customer'},
     children: [
       {
         path: '',
-        component: ManageCustomerComponent
+        component: ManageCustomerComponent,
+        data: { breadcrumb: 'Customer'}
       },
       {
         path: 'view/:id',
-        component: ViewCustomerComponent
+        component: ViewCustomerComponent,
+        data: { breadcrumb: 'View'},
       }
     ]
   },

@@ -23,6 +23,7 @@ import { CustomerSearchTableComponent } from './customer/customer-search-table/c
 import { ManageCustomerComponent } from './customer/main/manage-customer/manage-customer.component';
 import { ViewCustomerComponent } from './customer/main/view-customer/view-customer.component';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
+import {BreadcrumbModule} from 'angular-crumbs';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
     MatFormFieldModule,
     MatInputModule,
     MatSortModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    BreadcrumbModule  // breadcrumbs
   ],
   providers: [],
   bootstrap: [AppComponent]

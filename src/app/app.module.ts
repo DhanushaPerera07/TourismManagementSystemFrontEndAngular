@@ -18,6 +18,10 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatSortModule} from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { CustomerViewDataComponent } from './customer/customer-view-data/customer-view-data.component';
+import { CustomerSearchTableComponent } from './customer/customer-search-table/customer-search-table.component';
+import { ManageCustomerComponent } from './customer/main/manage-customer/manage-customer.component';
+import { ViewCustomerComponent } from './customer/main/view-customer/view-customer.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +30,11 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     SignInComponent,
     CustomerComponent,
     NotFoundComponent,
-    CustomerTableComponent
+    CustomerTableComponent,
+    CustomerViewDataComponent,
+    CustomerSearchTableComponent,
+    ManageCustomerComponent,
+    ViewCustomerComponent
   ],
   imports: [
     BrowserModule,

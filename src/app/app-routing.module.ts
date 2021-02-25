@@ -4,6 +4,10 @@ import {MainNavComponent} from './main-nav/main-nav.component';
 import {SignInComponent} from './signin/sign-in.component';
 import {CustomerComponent} from './customer/customer.component';
 import {NotFoundComponent} from './not-found/not-found.component';
+import {CustomerViewDataComponent} from './customer/customer-view-data/customer-view-data.component';
+import {CustomerTableComponent} from './customer/customer-table/customer-table.component';
+import {ManageCustomerComponent} from './customer/main/manage-customer/manage-customer.component';
+import {ViewCustomerComponent} from './customer/main/view-customer/view-customer.component';
 
 const routes: Routes = [
   {
@@ -17,7 +21,17 @@ const routes: Routes = [
   },
   {
     path: 'customer',
-    component: CustomerComponent
+    component: CustomerComponent,
+    children: [
+      {
+        path: '',
+        component: ManageCustomerComponent
+      },
+      {
+        path: 'view/:id',
+        component: ViewCustomerComponent
+      }
+    ]
   },
   {
     path: 'signin',

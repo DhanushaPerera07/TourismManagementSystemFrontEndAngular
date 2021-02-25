@@ -11,9 +11,9 @@ import {CustomerTableComponent} from './customer-table/customer-table.component'
 })
 export class CustomerComponent implements OnInit {
 
-  /* customer table child component */
+/*  /!* customer table child component *!/
   @ViewChild(CustomerTableComponent)
-  appCustomerTable!: CustomerTableComponent;
+  appCustomerTable!: CustomerTableComponent;*/
 
   constructor() {
   }
@@ -21,14 +21,14 @@ export class CustomerComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  /**
+/*  /!**
    * This method will call and
    * pass the user search input string to the child component
    * applyFilterToTable(value: string) function.
    * @param eventTarget: $event.target
-   */
+   *!/
   applyFilter(eventTarget: any): void {
     this.appCustomerTable.applyFilterToTable(eventTarget.value);
-  }
+  }*/
 
 }

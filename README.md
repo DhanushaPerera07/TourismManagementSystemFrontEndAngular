@@ -4,9 +4,8 @@
 
 This project developed as a solution for an emerging tourism company under single proprietorship. 
 
-##Abstract 
+## Abstract 
 
-Abstract
 Sri Lanka is one of the most popular destinations for travelers. 
 So, there are so many foreigners' visits, Sri Lanka, all the time. 
 As a result of that the tourism industry is popular in Sri Lanka. 

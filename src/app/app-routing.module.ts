@@ -7,6 +7,7 @@ import {NotFoundComponent} from './not-found/not-found.component';
 import {ManageCustomerComponent} from './customer/main/manage-customer/manage-customer.component';
 import {ViewCustomerComponent} from './customer/main/view-customer/view-customer.component';
 import {AddEditCustomerComponent} from './customer/main/add-edit-customer/add-edit-customer.component';
+import {HomeComponent} from './home/home.component';
 
 const routes: Routes = [
   {
@@ -16,7 +17,7 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    component: MainNavComponent,
+    component: HomeComponent,
     data: {breadcrumb: 'Home'}
   },
   {

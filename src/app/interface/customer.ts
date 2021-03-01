@@ -9,6 +9,8 @@ export interface Customer {
   phone: string;
   countryCallingCode: any;
   country: string;
+  description: string;
+  additionalNotes: string;
   addedDate: Date;
   addedBy: Employee;
 }

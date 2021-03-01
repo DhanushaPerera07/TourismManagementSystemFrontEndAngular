@@ -37,6 +37,16 @@
       <div class="col-3">Phone</div>
       <div class="col-3">{{ customer.phone | formatPhoneNumber: 'US' }}</div>
     </div>
+
+    <div class="row">
+      <div class="col-3">Customer Description</div>
+      <div class="col-9">{{ customer.description }}</div>
+    </div>
+
+    <div class="row">
+      <div class="col-3">Notes</div>
+      <div class="col-9">{{ customer.additionalNotes }}</div>
+    </div>
   </div>
 
 

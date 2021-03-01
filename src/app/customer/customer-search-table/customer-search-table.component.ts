@@ -1,5 +1,6 @@
 import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import {CustomerTableComponent} from '../customer-table/customer-table.component';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -15,7 +16,7 @@ export class CustomerSearchTableComponent implements OnInit, AfterViewInit {
   appCustomerTable!: CustomerTableComponent;
 
   constructor(
-    // private customerService: CustomerService
+    private router: Router
   ) {
   }
 
@@ -33,10 +34,10 @@ export class CustomerSearchTableComponent implements OnInit, AfterViewInit {
    * @param eventTarget: $event.target
    */
   applyFilter(eventTarget: any): void {
-    // console.log(this.customerService.appCustomerTable);
-    // this.customerService.appCustomerTable.applyFilterToTable(eventTarget.value);
-    console.log(this.appCustomerTable);
     this.appCustomerTable.applyFilterToTable(eventTarget.value);
   }
 
+  redirectToAddCustomer(): void {
+    this.router.navigateByUrl('/customer/add');
+  }
 }

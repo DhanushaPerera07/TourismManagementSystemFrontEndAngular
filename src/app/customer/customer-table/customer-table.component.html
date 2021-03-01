@@ -14,7 +14,7 @@
     <!-- Customer Name column -->
     <ng-container matColumnDef="name">
       <th *matHeaderCellDef mat-header-cell>Name</th>
-      <td class="make-cursor-pointer" *matCellDef="let element" mat-cell>{{element.name}}</td>
+      <td id="td_name" class="make-cursor-pointer" *matCellDef="let element" mat-cell>{{element.name}}</td>
     </ng-container>
 
     <!-- Customer Nationality column -->
@@ -38,7 +38,7 @@
     <!-- Customer Phone column -->
     <ng-container matColumnDef="phone">
       <th *matHeaderCellDef mat-header-cell>Phone</th>
-      <td class="make-cursor-pointer" *matCellDef="let element" mat-cell>{{element.phone}}</td>
+      <td class="make-cursor-pointer" *matCellDef="let element" mat-cell>{{element.phone | formatPhoneNumber: 'US'}}</td>
     </ng-container>
 
     <!-- Customer Country column -->
@@ -57,9 +57,9 @@
     <ng-container matColumnDef="options">
       <th *matHeaderCellDef mat-header-cell>Option</th>
       <td *matCellDef="let element" mat-cell>
-        <div class="customer_table_options">
+        <div (click)="$event.stopPropagation();" class="customer_table_options">
           <i [matMenuTriggerFor]="moreCustomerOptions" class="bi bi-three-dots-vertical icon-size"></i>
-          <i class="bi bi-pencil-square icon-size icon-edit"></i>
+          <i (click)="editCustomerRecord(element);" class="bi bi-pencil-square icon-size icon-edit"></i>
           <i class="bi bi-trash icon-size icon-delete"></i>
         </div>
 
@@ -68,19 +68,19 @@
 
     <!-- Menu for customer record -->
     <mat-menu #moreCustomerOptions="matMenu">
-      <button class="customer_set_tour" mat-menu-item>
+      <button (click)="$event.stopPropagation();" class="customer_set_tour" mat-menu-item>
         <i class="bi bi-calendar2-range icon-size"></i>
         <span>View tour(s)</span>
       </button>
 
-      <button class="customer_set_tour" mat-menu-item>
+      <button (click)="$event.stopPropagation();" class="customer_set_tour" mat-menu-item>
         <i class="bi bi-calendar2-plus icon-size"></i>
         <span>Set a new tour</span>
       </button>
     </mat-menu>
 
     <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
-    <tr (click)="viewCustomerRecord(row)" *matRowDef="let row; columns: displayedColumns;" mat-row></tr>
+    <tr (click)="viewCustomerRecord(row);" *matRowDef="let row; columns: displayedColumns;" mat-row></tr>
   </table>
   <mat-paginator [pageSize]="5" [pageSizeOptions]="[5,10,20,50,100]" showFirstLastButtons></mat-paginator>
 </div>

@@ -1,0 +1,43 @@
+.add-edit-customer-container{
+  padding-top: 2rem;
+  padding-bottom: 6rem;
+  //background-color: lightcoral;
+}
+
+.divider{
+  margin-bottom: 1.5rem;
+}
+
+//.form-container> form{
+//  display: flex;
+//  flex-direction: column;
+//  //width: 25vw;
+//}
+
+mat-form-field{
+  width: 100%;
+}
+
+textarea {
+  min-height: 15vh;
+}
+
+.form-button-section{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-form-submit{
+  background-color: #5cb85c;
+  color: white;
+}
+
+.btn-form{
+  min-width: 60px;
+  padding: 0 2rem;
+  margin: 0 1rem;
+}
+
+.textfield-mat-form-field {
+  width: 100%;
+}

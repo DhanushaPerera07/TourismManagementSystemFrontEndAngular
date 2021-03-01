@@ -8,6 +8,7 @@ import {CustomerViewDataComponent} from './customer/customer-view-data/customer-
 import {CustomerTableComponent} from './customer/customer-table/customer-table.component';
 import {ManageCustomerComponent} from './customer/main/manage-customer/manage-customer.component';
 import {ViewCustomerComponent} from './customer/main/view-customer/view-customer.component';
+import {AddEditCustomerComponent} from './customer/main/add-edit-customer/add-edit-customer.component';
 
 const routes: Routes = [
   {
@@ -28,19 +29,22 @@ const routes: Routes = [
       {
         path: '',
         component: ManageCustomerComponent,
-        data: { breadcrumb: 'Customer list'},
-        // children: [
-        //   {
-        //     path: 'view/:id',
-        //     component: ViewCustomerComponent,
-        //     data: { breadcrumb: 'View'},
-        //   }
-        // ]
+        data: { breadcrumb: 'Customer list'}
       },
       {
         path: 'view/:id',
         component: ViewCustomerComponent,
         data: { breadcrumb: 'View'},
+      },
+      {
+        path: 'add',
+        component: AddEditCustomerComponent,
+        data: { breadcrumb: 'Add'},
+      },
+      {
+        path: 'edit/:id',
+        component: AddEditCustomerComponent,
+        data: { breadcrumb: 'Edit'},
       }
     ]
   },

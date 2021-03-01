@@ -1,5 +1,5 @@
 .customer-view-data-container{
-  margin-top: 2rem;
+  padding: 2rem 0;
 }
 
 .row{
@@ -14,4 +14,8 @@
 
 .customer-details, .additional-details{
   margin-bottom: 2rem;
+}
+
+.additional-details>mat{
+  width: 100%;
 }

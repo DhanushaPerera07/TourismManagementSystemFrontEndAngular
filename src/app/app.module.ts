@@ -25,6 +25,8 @@ import { ViewCustomerComponent } from './customer/main/view-customer/view-custom
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import {BreadcrumbModule} from 'angular-crumbs';
 import { FormatPhoneNumberPipe } from './pipe/format-phone-number.pipe';
+import { AddEditCustomerComponent } from './customer/main/add-edit-customer/add-edit-customer.component';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,8 @@ import { FormatPhoneNumberPipe } from './pipe/format-phone-number.pipe';
     ManageCustomerComponent,
     ViewCustomerComponent,
     BreadcrumbComponent,
-    FormatPhoneNumberPipe
+    FormatPhoneNumberPipe,
+    AddEditCustomerComponent
   ],
   imports: [
     BrowserModule,
@@ -55,6 +58,7 @@ import { FormatPhoneNumberPipe } from './pipe/format-phone-number.pipe';
     MatInputModule,
     MatSortModule,
     MatPaginatorModule,
+    MatButtonModule,
     BreadcrumbModule  // breadcrumbs
   ],
   providers: [],

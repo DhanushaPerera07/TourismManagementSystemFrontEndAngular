@@ -1,0 +1,163 @@
+<app-main-nav></app-main-nav>
+<app-breadcrumb></app-breadcrumb>
+<div class="add-edit-customer-container">
+  <div class="container">
+    <h5 *ngIf="getIsAddingACustomer()">Add Customer</h5>
+    <h5 *ngIf="!getIsAddingACustomer()">Edit Customer</h5>
+    <mat-divider class="divider"></mat-divider>
+  </div>
+
+  <div class="container">
+    <div class="form-container">
+      <form #addCustomerForm="ngForm">
+        <!--Customer ID is only displayed if it is a edit operation-->
+        <div *ngIf="!getIsAddingACustomer()" class="row">
+          <div class="col-6">
+            <mat-form-field appearance="outline">
+              <mat-label>Customer ID</mat-label>
+              <input
+                #id
+                class="id"
+                id="in_id"
+                matInput
+                name="id"
+                [(ngModel)]="customer.id"
+                placeholder="ID"
+              disabled="disabled">
+            </mat-form-field>
+          </div>
+        </div>
+          <div class="row">
+            <div class="col-6">
+              <mat-form-field appearance="outline">
+                <mat-label>Customer Name</mat-label>
+                <input
+                  #name
+                  class="name"
+                  id="in_name"
+                  matInput
+                  name="name"
+                  [(ngModel)]="customer.name"
+                  placeholder="Name">
+              </mat-form-field>
+            </div>
+            <div class="col-6">
+              <mat-form-field appearance="outline">
+                <mat-label>Nationality</mat-label>
+                <input
+                  #nationality
+                  id="id_nationality"
+                  class="nationality"
+                  name="nationality"
+                  matInput
+                  [(ngModel)]="customer.nationality"
+                  placeholder="Nationality">
+              </mat-form-field>
+            </div>
+          </div>
+        <div class="row">
+          <div class="col-6">
+            <mat-form-field appearance="outline">
+              <mat-label>Country</mat-label>
+              <input
+                #country
+                id="id_country"
+                class="country"
+                name="country"
+                [(ngModel)]="customer.country"
+                matInput
+                placeholder="Country">
+            </mat-form-field>
+          </div>
+          <div class="col-6">
+            <mat-form-field appearance="outline">
+              <mat-label>Passport No</mat-label>
+              <input
+                #passportNo
+                id="id_passportNo"
+                class="passportNo"
+                name="passportNo"
+                [(ngModel)]="customer.passportNo"
+                matInput
+                placeholder="Passport No">
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <mat-form-field appearance="outline">
+              <mat-label>Email</mat-label>
+              <input
+                #email
+                id="id_email"
+                class="email"
+                name="email"
+                [(ngModel)]="customer.email"
+                matInput
+                placeholder="Email">
+            </mat-form-field>
+          </div>
+          <div class="col-6">
+            <div class="row">
+              <div class="col-6">
+
+              </div>
+              <div class="col-6">
+                <mat-form-field appearance="outline">
+                  <mat-label>Phone</mat-label>
+                  <input
+                    #phone
+                    id="id_phone"
+                    class="phone"
+                    name="phone"
+                    [(ngModel)]="customer.phone"
+                    matInput
+                    placeholder="Phone">
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="additional-details">
+          <div class="row">
+            <div class="col-6 col-sm-12">
+              <mat-form-field class="textfield-mat-form-field" appearance="outline">
+                <mat-label>Customer Description</mat-label>
+                <textarea
+                  #description
+                  id="id_description"
+                  class="description"
+                  name="description"
+                  [(ngModel)]="customer.description"
+                  matInput
+                placeholder="Customer description"></textarea>
+              </mat-form-field>
+            </div>
+            <div class="col-6 col-sm-12">
+              <mat-form-field class="textfield-mat-form-field" appearance="outline">
+                <mat-label>Additional Notes</mat-label>
+                <textarea
+                  #additionalNotes
+                  id="id_additionalNotes"
+                  class="additionalNotes"
+                  name="additionalNotes"
+                  [(ngModel)]="customer.additionalNotes"
+                  matInput></textarea>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="form-button-section">
+          <button *ngIf="getIsAddingACustomer()" class="btn-form btn-form-submit" mat-raised-button>Save</button>
+          <button *ngIf="!getIsAddingACustomer()" class="btn-form btn-form-submit" mat-raised-button>Update</button>
+          <button (click)="redirectToManageCustomer()" class="btn-form" color="warn" mat-raised-button>Cancel</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>

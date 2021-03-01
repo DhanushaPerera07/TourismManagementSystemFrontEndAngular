@@ -60,7 +60,7 @@
         <div (click)="$event.stopPropagation();" class="customer_table_options">
           <i [matMenuTriggerFor]="moreCustomerOptions" class="bi bi-three-dots-vertical icon-size"></i>
           <i (click)="editCustomerRecord(element);" class="bi bi-pencil-square icon-size icon-edit"></i>
-          <i class="bi bi-trash icon-size icon-delete"></i>
+          <i (click)="deleteCustomerRecord(element.id);" class="bi bi-trash icon-size icon-delete"></i>
         </div>
 
       </td>

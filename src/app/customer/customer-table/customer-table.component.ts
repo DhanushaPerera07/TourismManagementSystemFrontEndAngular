@@ -74,4 +74,13 @@ export class CustomerTableComponent implements OnInit, AfterViewInit {
     this.route.navigateByUrl('customer/edit/' + element.id);
     // alert('edit successful...!');
   }
+
+  deleteCustomerRecord(id: number): void {
+    if (id) {
+      if (confirm('Are you sure you want to delete this record? Click OK to Delete the record.')) {
+        /* delete the customer record */
+        console.log(id); // testing purposes
+      }
+    }
+  }
 }

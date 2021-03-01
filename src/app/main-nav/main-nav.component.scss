@@ -36,10 +36,17 @@
     padding: 0 1rem;
   }
 
-  & li:hover{
-  transform: scale(1.1);
+  & li:hover {
+    transform: scale(1.1);
+  }
+
+  & li a{
+    text-decoration: none;
+    color: #343a40;
+  }
 }
-}
+
+
 
 .header_right {
   display: flex;

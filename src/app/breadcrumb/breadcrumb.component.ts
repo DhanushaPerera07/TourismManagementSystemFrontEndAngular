@@ -23,7 +23,7 @@ export class BreadcrumbComponent implements OnInit {
   }
 
   private createTitle(routesCollection: Breadcrumb[]): string {
-    const title = 'Angular Breadcrumb';
+    const title = 'Elephas Vacation';
     const titles = routesCollection.filter((route) => route.displayName);
 
     if (!titles.length) { return title; }

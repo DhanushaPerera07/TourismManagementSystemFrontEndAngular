@@ -9,14 +9,14 @@
       </div>
       <div class="col-6">
         <ul class="header_center">
-          <li>Home</li>
-          <li>Packages</li>
-          <li>Customer</li>
-          <li>Accommodation</li>
-          <li>Transport</li>
-          <li>Guide</li>
-          <li>Famous Destination</li>
-          <li *ngIf="true">Admin</li>
+          <li><a routerLink="/home">Home</a></li>
+          <li><a routerLink="/customer">Customer</a></li>
+          <li><a routerLink="/packages">Packages</a></li>
+          <li><a routerLink="/accommodation">Accommodation</a></li>
+          <li><a routerLink="/transport">Transport</a></li>
+          <li><a routerLink="/guide">Guide</a></li>
+          <li><a routerLink="/famousdestination">Famous Destination</a></li>
+          <li *ngIf="true"><a routerLink="/admin">Admin</a></li>
           <!--    <li>Hotel</li>-->
           <!--    <li>Driver & Vehicle</li>-->
           <!--    <li>Vehicle</li>-->
@@ -31,8 +31,6 @@
         </section>
       </div>
     </div>
-
-
 
 
   </div>

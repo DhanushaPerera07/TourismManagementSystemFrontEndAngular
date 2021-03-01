@@ -65,7 +65,8 @@ export class CustomerTableComponent implements OnInit, AfterViewInit {
    */
   viewCustomerRecord(row: any): void {
     this.customerService.customer = row; // row = selected customer
-    this.route.navigateByUrl('customer/view/' + row.id);
+    this.route.navigateByUrl('customer/' + row.id);
+    // this.route.navigateByUrl('customer/view/' + row.id);
   }
 
   editCustomerRecord(element: any): void {

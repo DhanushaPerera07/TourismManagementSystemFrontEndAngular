@@ -4,14 +4,8 @@
 
     <!-- dashboard row -->
     <div class="row">
-      <div class="col-4">
-        <app-dashboard-box></app-dashboard-box>
-      </div>
-      <div class="col-4">
-        <app-dashboard-box></app-dashboard-box>
-      </div>
-      <div class="col-4">
-        <app-dashboard-box></app-dashboard-box>
+      <div class="col-sm-12 col-md-6 col-lg-4 col-12 margin-bottom" *ngFor="let dashboardItem of dashboardBoxList">
+        <app-dashboard-box [stat]="dashboardItem"></app-dashboard-box>
       </div>
     </div>
 

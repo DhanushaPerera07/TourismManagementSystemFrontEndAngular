@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {DashboardService} from '../../shared/service/dashboard/dashboard.service';
+import {DashboardBox} from '../../interface/dashboard-box';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,7 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  Math = Math;
+  dashboardBoxList!: DashboardBox[];
+
+  constructor(private dashboardService: DashboardService) {
+    this.dashboardBoxList = this.dashboardService.dashboardBoxList;
+  }
 
   ngOnInit(): void {
   }

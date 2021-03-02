@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit, ViewChild} from '@angular/core';
+import {DashboardBox} from '../../../interface/dashboard-box';
 
 @Component({
   selector: 'app-dashboard-box',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardBoxComponent implements OnInit {
 
-  constructor() { }
+  @Input()
+  stat!: DashboardBox;
+
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

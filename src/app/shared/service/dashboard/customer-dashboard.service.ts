@@ -8,7 +8,7 @@ const customerDashboardStat = {
   styles: {
     backgroundColor: '#fdb827'
   },
-  icon: 'fa fa-user-o',
+  icon: 'perm_identity',
   redirectUrl: ''
 };
 

@@ -30,6 +30,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './home/dashboard/dashboard.component';
 import { DashboardBoxComponent } from './home/dashboard/dashboard-box/dashboard-box.component';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -65,6 +66,7 @@ import { DashboardBoxComponent } from './home/dashboard/dashboard-box/dashboard-
     MatSortModule,
     MatPaginatorModule,
     MatButtonModule,
+    MatIconModule,
     BreadcrumbModule  // breadcrumbs
   ],
   providers: [],

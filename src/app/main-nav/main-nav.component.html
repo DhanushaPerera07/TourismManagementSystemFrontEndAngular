@@ -27,7 +27,19 @@
         <section class="header_right">
           <span>Sithara Perera</span>
           <img alt="employee-profile-photo" src="./assets/employee/profile-photo/user-profile-photo.svg">
-          <i class="bi bi-chevron-down"></i>
+          <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+            <i class="bi bi-chevron-down"></i>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+              <mat-icon>edit</mat-icon>
+              <span>Manage Profile</span>
+            </button>
+            <button mat-menu-item>
+              <mat-icon>logout</mat-icon>
+              <span>logout</span>
+            </button>
+          </mat-menu>
         </section>
       </div>
     </div>

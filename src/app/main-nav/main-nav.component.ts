@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Employee} from '../shared/model/employee.model';
+import {EmployeeService} from '../shared/service/employee.service';
 
 @Component({
   selector: 'app-main-nav',
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainNavComponent implements OnInit {
 
-  constructor() { }
+  employee!: Employee;
+
+  constructor(private employeeService: EmployeeService) {
+    this.employee = this.employeeService.activeEmployee;
+  }
 
   ngOnInit(): void {
   }

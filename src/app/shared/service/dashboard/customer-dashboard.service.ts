@@ -5,6 +5,9 @@ const customerDashboardStat = {
   id: 1,
   title: 'Customer',
   statistic: 25,
+  styles: {
+    backgroundColor: '#fdb827'
+  },
   icon: 'fa fa-user-o',
   redirectUrl: ''
 };

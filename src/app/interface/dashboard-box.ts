@@ -3,5 +3,6 @@ export interface DashboardBox {
   title: string;
   statistic: number;
   icon: string;
+  styles: object;
   redirectUrl: string;
 }

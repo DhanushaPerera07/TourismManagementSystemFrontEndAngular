@@ -31,6 +31,7 @@ import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './home/dashboard/dashboard.component';
 import { DashboardBoxComponent } from './home/dashboard/dashboard-box/dashboard-box.component';
 import {MatIconModule} from '@angular/material/icon';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -67,6 +68,7 @@ import {MatIconModule} from '@angular/material/icon';
     MatPaginatorModule,
     MatButtonModule,
     MatIconModule,
+    MatDialogModule,
     BreadcrumbModule  // breadcrumbs
   ],
   providers: [],

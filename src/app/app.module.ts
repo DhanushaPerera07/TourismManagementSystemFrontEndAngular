@@ -35,6 +35,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { EmployeeComponent } from './employee/employee.component';
 import { ProfilePictureComponent } from './employee/profile-picture/profile-picture.component';
 import {MatExpansionModule} from '@angular/material/expansion';
+import { ChangeLoginCredentialsComponent } from './employee/change-login-credentials/change-login-credentials.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
     DashboardComponent,
     DashboardBoxComponent,
     EmployeeComponent,
-    ProfilePictureComponent
+    ProfilePictureComponent,
+    ChangeLoginCredentialsComponent
   ],
   imports: [
     BrowserModule,

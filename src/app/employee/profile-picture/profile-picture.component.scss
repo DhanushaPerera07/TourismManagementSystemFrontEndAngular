@@ -1,0 +1,29 @@
+@mixin object-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-pic-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  & .box1 {
+    width: 300px;
+    height: 300px;
+    object-fit: scale-down;
+    //background-color: lightgreen;
+    border: 1px solid lightgray;
+    border-radius: 50%;
+    @include object-center;
+  }
+
+}
+
+.btn-change-pro-pic {
+  background-color: white;
+  margin: 1rem 0;
+  width: 300px;
+  //visibility: hidden;
+}

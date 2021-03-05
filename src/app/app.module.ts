@@ -32,6 +32,9 @@ import { DashboardComponent } from './home/dashboard/dashboard.component';
 import { DashboardBoxComponent } from './home/dashboard/dashboard-box/dashboard-box.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
+import { EmployeeComponent } from './employee/employee.component';
+import { ProfilePictureComponent } from './employee/profile-picture/profile-picture.component';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -50,7 +53,9 @@ import {MatDialogModule} from '@angular/material/dialog';
     AddEditCustomerComponent,
     HomeComponent,
     DashboardComponent,
-    DashboardBoxComponent
+    DashboardBoxComponent,
+    EmployeeComponent,
+    ProfilePictureComponent
   ],
   imports: [
     BrowserModule,
@@ -69,6 +74,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatButtonModule,
     MatIconModule,
     MatDialogModule,
+    MatExpansionModule,
     BreadcrumbModule  // breadcrumbs
   ],
   providers: [],

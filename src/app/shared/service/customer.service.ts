@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Customer} from '../../interface/customer';
-import {Employee} from '../model/employee.model';
+import {Employee} from '../model/employee/employee.model';
 
 /* sample customer data */
 const CUSTOMER_DATA: Customer[] = [
@@ -30,7 +30,7 @@ const CUSTOMER_DATA: Customer[] = [
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
     additionalNotes: 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident',
     addedDate: new Date(Date.now()),
-    addedBy: new Employee(1, 'Sithara Perera')
+    addedBy: new Employee(2, 'Prasad Madusanka')
   }
 ];
 

@@ -2,7 +2,7 @@ import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/
 import {Router} from '@angular/router';
 import {CustomerService} from '../../../shared/service/customer.service';
 import {Customer} from '../../../interface/customer';
-import {Employee} from '../../../shared/model/employee.model';
+import {Employee} from '../../../shared/model/employee/employee.model';
 
 @Component({
   selector: 'app-add-edit-customer',

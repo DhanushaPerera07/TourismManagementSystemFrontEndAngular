@@ -1,0 +1,4 @@
+export enum Status{
+  FORMER_EMPLOYEE= 'FORMER EMPLOYEE',
+  ACTIVE = 'ACTIVE'
+}

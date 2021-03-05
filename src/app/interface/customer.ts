@@ -1,4 +1,4 @@
-import {Employee} from '../shared/model/employee.model';
+import {Employee} from '../shared/model/employee/employee.model';
 
 export interface Customer {
   id: number;

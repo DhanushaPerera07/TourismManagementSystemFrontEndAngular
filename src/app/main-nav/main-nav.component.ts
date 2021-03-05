@@ -1,8 +1,8 @@
-import {Component, OnInit} from '@angular/core';
-import {Employee} from '../shared/model/employee.model';
+import {Component, Inject, OnInit} from '@angular/core';
+import {Employee} from '../shared/model/employee/employee.model';
 import {EmployeeService} from '../shared/service/employee.service';
-import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
-import {NotFoundComponent} from '../not-found/not-found.component';
+import {MatDialog, MatDialogConfig, MatDialogRef} from '@angular/material/dialog';
+import {EmployeeComponent} from '../employee/employee.component';
 
 @Component({
   selector: 'app-main-nav',
@@ -13,11 +13,7 @@ export class MainNavComponent implements OnInit {
 
   employee!: Employee;
 
-  constructor(private employeeService: EmployeeService,
-              public dialog: MatDialog
-              // ,
-              // public dialogConfig: MatDialogConfig
-  ) {
+  constructor(private employeeService: EmployeeService) {
     this.employee = this.employeeService.activeEmployee;
   }
 
@@ -26,7 +22,6 @@ export class MainNavComponent implements OnInit {
 
   /** Opens dialog box */
   openManageProfileDialog(): void {
-    // this.dialogConfig.height = '50vw';
-    this.dialog.open(NotFoundComponent);
+    this.employeeService.openDialogBox();
   }
 }

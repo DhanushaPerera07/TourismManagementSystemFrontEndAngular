@@ -36,6 +36,7 @@ import { EmployeeComponent } from './employee/employee.component';
 import { ProfilePictureComponent } from './employee/profile-picture/profile-picture.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { ChangeLoginCredentialsComponent } from './employee/change-login-credentials/change-login-credentials.component';
+import { ToEmployeeIdPipe } from './pipe/to-employee-id.pipe';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { ChangeLoginCredentialsComponent } from './employee/change-login-credent
     DashboardBoxComponent,
     EmployeeComponent,
     ProfilePictureComponent,
-    ChangeLoginCredentialsComponent
+    ChangeLoginCredentialsComponent,
+    ToEmployeeIdPipe
   ],
   imports: [
     BrowserModule,

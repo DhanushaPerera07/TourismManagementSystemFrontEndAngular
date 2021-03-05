@@ -16,7 +16,7 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-6">
-              <p><strong>ID:</strong><br>E00{{ activeEmployee.id }}</p>
+              <p><strong>ID:</strong><br>{{ activeEmployee.id | toEmployeeId }}</p>
               <p><strong>Name:</strong><br>{{ activeEmployee.name }}</p>
               <p><strong>Address:</strong><br>{{ activeEmployee.address }}</p>
               <p><strong>Contact:</strong><br>{{ activeEmployee.contact }}</p>

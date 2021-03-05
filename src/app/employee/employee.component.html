@@ -4,40 +4,56 @@
     <mat-icon>close</mat-icon>
   </button>
 
-  <!-- employee details -->
-  <mat-expansion-panel expanded>
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        Employee Details
-      </mat-panel-title>
-    </mat-expansion-panel-header>
-    <mat-panel-description>
-      <div class="container">
-        <div class="row">
-          <div class="col-6">
-            <p><strong>ID:</strong><br>E00{{ activeEmployee.id }}</p>
-            <p><strong>Name:</strong><br>{{ activeEmployee.name }}</p>
-            <p><strong>Address:</strong><br>{{ activeEmployee.address }}</p>
-            <p><strong>Contact:</strong><br>{{ activeEmployee.contact }}</p>
-            <p><strong>Email:</strong><br>{{ activeEmployee.email }}</p>
-            <p><strong>NIC:</strong><br>{{ activeEmployee.nic }}</p>
-            <p><strong>Gender:</strong><br>{{ activeEmployee.gender | titlecase }}</p>
-            <p><strong>Date of Birth:</strong><br> {{ activeEmployee.dob | date }}</p>
-            <p><strong>Position:</strong><br>{{ activeEmployee.position | titlecase }}</p>
-            <p><strong>Status:</strong><br>{{ activeEmployee.status | titlecase }}</p>
-          </div>
-          <div class="col-6">
-            <!-- profile picture component -->
-            <app-profile-picture></app-profile-picture>
+  <mat-accordion multi>
+    <!-- employee details -->
+    <mat-expansion-panel expanded>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Employee Details
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-panel-description>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-6">
+              <p><strong>ID:</strong><br>E00{{ activeEmployee.id }}</p>
+              <p><strong>Name:</strong><br>{{ activeEmployee.name }}</p>
+              <p><strong>Address:</strong><br>{{ activeEmployee.address }}</p>
+              <p><strong>Contact:</strong><br>{{ activeEmployee.contact }}</p>
+              <p><strong>Email:</strong><br>{{ activeEmployee.email }}</p>
+              <p><strong>NIC:</strong><br>{{ activeEmployee.nic }}</p>
+              <p><strong>Gender:</strong><br>{{ activeEmployee.gender | titlecase }}</p>
+              <p><strong>Date of Birth:</strong><br> {{ activeEmployee.dob | date }}</p>
+              <p><strong>Position:</strong><br>{{ activeEmployee.position | titlecase }}</p>
+              <p><strong>Status:</strong><br>{{ activeEmployee.status | titlecase }}</p>
+            </div>
+            <div class="col-6">
+              <!-- profile picture component -->
+              <app-profile-picture></app-profile-picture>
+            </div>
           </div>
         </div>
-      </div>
-    </mat-panel-description>
-  </mat-expansion-panel>
+      </mat-panel-description>
+    </mat-expansion-panel>
 
 
-  <!-- change login credentials -->
+    <!-- change login credentials -->
+    <mat-expansion-panel class="margin-bottom" expanded>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Change Login Credentials
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-panel-description>
+        <app-change-login-credentials></app-change-login-credentials>
+      </mat-panel-description>
 
+      <mat-action-row>
+        <button class="btn-change" mat-button>Change</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+
+  </mat-accordion>
 </div>
 
 

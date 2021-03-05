@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-change-login-credentials',
@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChangeLoginCredentialsComponent implements OnInit {
 
-  constructor() { }
+  hide = true;
+
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
 
+  /* onSubmit */
+  onSubmit(): void {
+
+  }
 }

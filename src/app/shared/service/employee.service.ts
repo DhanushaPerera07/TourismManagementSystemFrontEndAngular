@@ -32,7 +32,7 @@ export class EmployeeService {
   ) {
     this.dialogConfig = {
       width: '60%',
-      // height: '100%',
+      height: '100%',
       disableClose: true
     };
   }

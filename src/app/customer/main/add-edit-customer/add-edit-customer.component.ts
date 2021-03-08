@@ -47,9 +47,10 @@ export class AddEditCustomerComponent implements OnInit
       this.initializeCustomerObject();
       // (this.nameInputElement.nativeElement as HTMLInputElement).focus();
 
-    }
-    if (this.customerService.customerToBeEdited) {
-      this.customer = this.customerService.customerToBeEdited;
+    } else {
+      if (this.customerService.customerToBeEdited) {
+        this.customer = this.customerService.customerToBeEdited;
+      }
     }
 
     setTimeout(() => {
@@ -68,6 +69,7 @@ export class AddEditCustomerComponent implements OnInit
   }
 
   initializeCustomerObject(): void {
+    console.log('initializing customer obj...!');
     this.customer = {
       id: 0,
       name: '',

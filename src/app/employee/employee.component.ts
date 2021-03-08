@@ -11,14 +11,12 @@ export class EmployeeComponent implements OnInit {
 
   activeEmployee: Employee;
 
-  constructor(private employeeService: EmployeeService) {
-    this.activeEmployee = this.employeeService.activeEmployee;
+  constructor(private employeeService: EmployeeService
+  ) {
+    this.activeEmployee = this.employeeService.getActiveEmployee();
   }
 
   ngOnInit(): void {
   }
 
-  closeDialog(): void {
-    this.employeeService.dialogRef.close();
-  }
 }

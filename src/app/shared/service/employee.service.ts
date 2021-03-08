@@ -1,7 +1,5 @@
 import {Injectable} from '@angular/core';
 import {Employee} from '../model/employee/employee.model';
-import {MatDialog, MatDialogConfig, MatDialogRef} from '@angular/material/dialog';
-import {EmployeeComponent} from '../../employee/employee.component';
 import {Position} from '../model/employee/position.enum';
 import {Status} from '../model/employee/status.enum';
 import {Gender} from '../model/gender.enum';
@@ -25,20 +23,12 @@ const employeeSample = new Employee(2,
 export class EmployeeService {
 
   activeEmployee = employeeSample;
-  dialogConfig: MatDialogConfig = new MatDialogConfig();
-  dialogRef!: MatDialogRef<any>;
 
-  constructor(public dialog: MatDialog
-  ) {
-    this.dialogConfig = {
-      width: '60%',
-      height: '100%',
-      disableClose: true
-    };
+  constructor() {
   }
 
-  openDialogBox(): void {
-    this.dialogRef = this.dialog.open(EmployeeComponent, this.dialogConfig);
+  getActiveEmployee(): Employee {
+    return this.activeEmployee;
   }
 
 }

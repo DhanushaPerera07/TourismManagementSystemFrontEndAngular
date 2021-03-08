@@ -38,6 +38,6 @@ export class CustomerSearchTableComponent implements OnInit, AfterViewInit {
   }
 
   redirectToAddCustomer(): void {
-    this.router.navigateByUrl('/customer/add');
+    this.router.navigateByUrl('customer/add');
   }
 }

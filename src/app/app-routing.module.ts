@@ -26,16 +26,6 @@ const routes: Routes = [
     data: {breadcrumb: 'Manage Customer'},
     children: [
       {
-        path: '',
-        component: ManageCustomerComponent,
-        data: {breadcrumb: 'Customer list'}
-      },
-      {
-        path: ':id',
-        component: ViewCustomerComponent,
-        data: {breadcrumb: 'Details'},
-      },
-      {
         path: 'add',
         component: AddEditCustomerComponent,
         data: {breadcrumb: 'Add'},
@@ -44,6 +34,15 @@ const routes: Routes = [
         path: 'edit/:id',
         component: AddEditCustomerComponent,
         data: {breadcrumb: 'Edit'},
+      },
+      {
+        path: ':id',
+        component: ViewCustomerComponent,
+        data: {breadcrumb: 'Details'},
+      },      {
+        path: '',
+        component: ManageCustomerComponent,
+        data: {breadcrumb: 'Customer list'}
       }
     ]
   },

@@ -5,16 +5,17 @@
       <mat-form-field floatLabel="never">
         <input (keyup)="applyFilter($event.target);" matInput placeholder="Search a Customer">
       </mat-form-field>
-      <button type="button" class="btn btn-search">
+      <button class="btn btn-search" type="button">
         <i class="bi bi-search"></i>
         Search
       </button>
     </div>
-    <button type="button"
+    <button (click)="redirectToAddCustomer()"
             class="btn btn-add"
-    (click)="redirectToAddCustomer()">
+            type="button">
       <i class="bi bi-plus-square"></i>
-      Add</button>
+      Add
+    </button>
   </section>
 
   <mat-divider class="divider"></mat-divider>

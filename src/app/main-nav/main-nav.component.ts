@@ -1,8 +1,7 @@
-import {Component, Inject, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Employee} from '../shared/model/employee/employee.model';
 import {EmployeeService} from '../shared/service/employee.service';
-import {MatDialog, MatDialogConfig, MatDialogRef} from '@angular/material/dialog';
-import {EmployeeComponent} from '../employee/employee.component';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-main-nav',
@@ -13,7 +12,8 @@ export class MainNavComponent implements OnInit {
 
   employee!: Employee;
 
-  constructor(private employeeService: EmployeeService) {
+  constructor(private employeeService: EmployeeService,
+              private router: Router) {
     this.employee = this.employeeService.activeEmployee;
   }
 
@@ -24,4 +24,13 @@ export class MainNavComponent implements OnInit {
   openManageProfileDialog(): void {
     this.employeeService.openDialogBox();
   }
+
+  /** Log out from the system */
+  onLogout(): void {
+    /* Signing out process */
+
+    /* Navigate to sign in page */
+    this.router.navigateByUrl('/signin');
+  }
+
 }

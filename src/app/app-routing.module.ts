@@ -8,6 +8,9 @@ import {ManageCustomerComponent} from './customer/main/manage-customer/manage-cu
 import {ViewCustomerComponent} from './customer/main/view-customer/view-customer.component';
 import {AddEditCustomerComponent} from './customer/main/add-edit-customer/add-edit-customer.component';
 import {HomeComponent} from './home/home.component';
+import {AccommodationComponent} from './accommodation/accommodation.component';
+import {ManageAccommodationComponent} from './accommodation/main/manage-accommodation/manage-accommodation.component';
+import {AddEditAccommodationComponent} from './accommodation/main/add-edit-accommodation/add-edit-accommodation.component';
 
 const routes: Routes = [
   {
@@ -39,10 +42,32 @@ const routes: Routes = [
         path: ':id',
         component: ViewCustomerComponent,
         data: {breadcrumb: 'Details'},
-      },      {
+      }, {
         path: '',
         component: ManageCustomerComponent,
         data: {breadcrumb: 'Customer list'}
+      }
+    ]
+  },
+  {
+    path: 'accommodation',
+    component: AccommodationComponent,
+    data: {breadcrumb: 'Manage Accommodation'},
+    children: [
+      {
+        path: 'add',
+        component: AddEditAccommodationComponent,
+        data: {breadcrumb: 'Add'}
+      },
+      {
+        path: 'edit/:id',
+        component: AddEditAccommodationComponent,
+        data: {breadcrumb: 'Edit'}
+      },
+      {
+        path: '',
+        component: ManageAccommodationComponent,
+        data: {breadcrumb: 'Manage Accommodation'}
       }
     ]
   },

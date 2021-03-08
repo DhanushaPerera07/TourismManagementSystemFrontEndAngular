@@ -40,6 +40,7 @@ import { ToEmployeeIdPipe } from './pipe/to-employee-id.pipe';
 import { AccommodationComponent } from './accommodation/accommodation.component';
 import { ManageAccommodationComponent } from './accommodation/main/manage-accommodation/manage-accommodation.component';
 import { AddEditAccommodationComponent } from './accommodation/main/add-edit-accommodation/add-edit-accommodation.component';
+import { AccommodationSearchTableComponent } from './accommodation/component/accommodation-search-table/accommodation-search-table.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,8 @@ import { AddEditAccommodationComponent } from './accommodation/main/add-edit-acc
     ToEmployeeIdPipe,
     AccommodationComponent,
     ManageAccommodationComponent,
-    AddEditAccommodationComponent
+    AddEditAccommodationComponent,
+    AccommodationSearchTableComponent
   ],
   imports: [
     BrowserModule,

@@ -41,6 +41,7 @@ import { AccommodationComponent } from './accommodation/accommodation.component'
 import { ManageAccommodationComponent } from './accommodation/main/manage-accommodation/manage-accommodation.component';
 import { AddEditAccommodationComponent } from './accommodation/main/add-edit-accommodation/add-edit-accommodation.component';
 import { AccommodationSearchTableComponent } from './accommodation/component/accommodation-search-table/accommodation-search-table.component';
+import { AccommodationTableComponent } from './accommodation/component/accommodation-table/accommodation-table.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +68,8 @@ import { AccommodationSearchTableComponent } from './accommodation/component/acc
     AccommodationComponent,
     ManageAccommodationComponent,
     AddEditAccommodationComponent,
-    AccommodationSearchTableComponent
+    AccommodationSearchTableComponent,
+    AccommodationTableComponent
   ],
   imports: [
     BrowserModule,

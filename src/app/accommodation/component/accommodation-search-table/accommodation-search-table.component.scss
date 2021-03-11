@@ -1,0 +1,60 @@
+@mixin screen-sm-min{
+
+}
+
+/* At the top level of your code */
+@media screen and (min-width: 576px) {
+  .search_header_right{
+    justify-content: flex-end;
+  }
+}
+
+.accommodation-search-table {
+  padding: 1rem 0;
+
+  & .search_header_section {
+
+    //display: flex;
+    //justify-content: space-between;
+    //align-items: center;
+    height: fit-content;
+
+    & .search_header_left{
+      display: flex;
+      align-items: center;
+    }
+    //
+    & .search_header_center{
+      display: flex;
+      align-items: center;
+    }
+
+    & .search_header_right{
+      display: flex;
+      //justify-content: flex-end;
+      align-items: center;
+    }
+
+  }
+
+}
+
+
+mat-form-field{
+  width: 100%;
+}
+
+
+.btn-add, .btn-search {
+  //height: fit-content;
+  color: white;
+  background-color: #0c9463;
+}
+
+.btn-search {
+  margin: 0 0.5rem;
+}
+
+.mat-form-field-wrapper {
+  padding-bottom: 0;
+}

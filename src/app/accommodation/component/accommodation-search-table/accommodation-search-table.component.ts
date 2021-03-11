@@ -10,6 +10,15 @@ export class AccommodationSearchTableComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    ((document.getElementsByClassName('mat-form-field-wrapper')[0]) as HTMLDivElement).style.padding = '0px';
   }
 
+  /* filter the table data according to input value */
+  applyFilter(eventTarget: any): void {
+
+  }
+
+  redirectToAddAccommodation(): void {
+
+  }
 }

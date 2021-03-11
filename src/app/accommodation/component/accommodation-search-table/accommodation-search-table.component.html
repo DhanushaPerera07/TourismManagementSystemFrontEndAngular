@@ -1,1 +1,31 @@
-<p>accommodation-search-table works!</p>
+<div class="container accommodation-search-table">
+  <!-- search-table, header section -->
+  <div class="search_header_section row">
+    <div class="search_header_left col-12 col-sm-4">
+      <h5>Manage Accommodation</h5>
+    </div>
+
+    <div class="search_header_center col-12 col-sm-4">
+      <mat-form-field class="in_search" appearance="outline" floatLabel="never">
+        <input (keyup)="applyFilter($event.target);" matInput placeholder="Search an accommodation">
+      </mat-form-field>
+<!--      <button class="btn btn-search" type="button">-->
+<!--        <i class="bi bi-search"></i>-->
+<!--        Search-->
+<!--      </button>-->
+    </div>
+
+    <div class="search_header_right col-12 col-sm-4">
+      <button (click)="redirectToAddAccommodation()"
+              class="btn btn-add"
+              type="button">
+        <i class="bi bi-plus-square"></i>
+        Add
+      </button>
+    </div>
+  </div>
+
+
+  <!-- accommodation table component -->
+  <app-accommodation-table></app-accommodation-table>
+</div>

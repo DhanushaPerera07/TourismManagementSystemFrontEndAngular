@@ -1,27 +1,22 @@
-<div class="customer_header">
-  <section class="customer_header_top">
-    <h5>Manage Customer</h5>
-    <div class="customer_search">
-      <mat-form-field floatLabel="never">
+<div class="customer_header_container">
+  <div class="customer_header row">
+    <div class="customer_header_left col-12 col-sm-4">
+      <h5>Manage Customer</h5>
+    </div>
+    <div class="customer_search col-12 col-sm-4">
+      <mat-form-field floatLabel="never" appearance="outline">
         <input (keyup)="applyFilter($event.target);" matInput placeholder="Search a Customer">
       </mat-form-field>
-      <button class="btn btn-search" type="button">
-        <i class="bi bi-search"></i>
-        Search
+    </div>
+    <div class="customer_header_right col-12 col-sm-4">
+      <button (click)="redirectToAddCustomer()"
+              class="btn btn-add"
+              type="button">
+        <i class="bi bi-plus-square"></i>
+        Add
       </button>
     </div>
-    <button (click)="redirectToAddCustomer()"
-            class="btn btn-add"
-            type="button">
-      <i class="bi bi-plus-square"></i>
-      Add
-    </button>
-  </section>
-
-  <mat-divider class="divider"></mat-divider>
-  <section class="customer_header_content">
-
-  </section>
+  </div>
 
 </div>
 

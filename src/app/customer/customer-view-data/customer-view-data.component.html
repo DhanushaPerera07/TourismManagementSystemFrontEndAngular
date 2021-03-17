@@ -1,67 +1,68 @@
 <div class="customer-view-data-container">
   <div class="customer-details">
-    <h5>Customer Details</h5>
+    <h5 class="make-space">Customer Details</h5>
     <mat-divider class="divider"></mat-divider>
 
     <div class="row">
-      <div class="col-3">ID</div>
-      <div class="col-3">C00{{ customer.id }}</div>
+      <div class="attributes col-12 col-sm-12 col-md-3 col-lg-3">ID</div>
+      <div class="col-12 col-sm-12 col-md-3 col-lg-3">C00{{ customer.id }}</div>
     </div>
 
     <div class="row">
-      <div class="col-3">Name</div>
-      <div class="col-3">{{ customer.name }}</div>
+      <div class="attributes col-3">Name</div>
+      <div class="col-12 col-sm-12 col-md-3 col-lg-3">{{ customer.name }}</div>
     </div>
 
     <div class="row">
-      <div class="col-3">Country</div>
-      <div class="col-3">{{ customer.country}}</div>
+      <div class="attributes col-3">Country</div>
+      <div class="col-12 col-sm-12 col-md-3 col-lg-3">{{ customer.country}}</div>
     </div>
 
     <div class="row">
-      <div class="col-3">Nationality</div>
-      <div class="col-3">{{ customer.nationality }}</div>
+      <div class="attributes col-3">Nationality</div>
+      <div class="col-12 col-sm-12 col-md-3 col-lg-3">{{ customer.nationality }}</div>
     </div>
 
     <div class="row">
-      <div class="col-3">Passport No</div>
-      <div class="col-3">{{ customer.passportNo }}</div>
+      <div class="attributes col-3">Passport No</div>
+      <div class="col-12 col-sm-12 col-md-3 col-lg-3">{{ customer.passportNo }}</div>
     </div>
 
     <div class="row">
-      <div class="col-3">Email</div>
-      <div class="col-3">{{ customer.email }}</div>
+      <div class="attributes col-3">Email</div>
+      <div class="col-12 col-sm-12 col-md-3 col-lg-3">{{ customer.email }}</div>
     </div>
 
     <div class="row">
-      <div class="col-3">Phone</div>
-      <div class="col-3">{{ customer.phone | formatPhoneNumber: 'US' }}</div>
+      <div class="attributes col-3">Phone</div>
+      <div class="col-12 col-sm-12 col-md-3 col-lg-3">{{ customer.phone | formatPhoneNumber: 'US' }}</div>
     </div>
 
     <div class="row">
-      <div class="col-3">Customer Description</div>
-      <div class="col-9">{{ customer.description }}</div>
+      <div class="attributes col-12 col-sm-3 col-md-3 col-lg-3">Customer Description</div>
+      <div class="col-sm-9 col-md-9 col-lg-9">{{ customer.description }}</div>
     </div>
 
     <div class="row">
-      <div class="col-3">Notes</div>
-      <div class="col-9">{{ customer.additionalNotes }}</div>
+      <div class="attributes col-12 col-sm-3 col-md-3 col-lg-3">Notes</div>
+      <div class="col-12 col-sm-9 col-md-9 col-lg-9">{{ customer.additionalNotes }}</div>
     </div>
   </div>
 
+  <br>
 
   <!-- additional details -->
   <div class="additional-details">
-    <h5>Additional Details</h5>
+    <h5 class="make-space">Additional Details</h5>
     <mat-divider class="divider"></mat-divider>
 
     <div class="row">
-      <div class="col-3">Added Date</div>
+      <div class="attributes col-3">Added Date</div>
       <div class="col-3">{{ customer.addedDate | date: 'medium' }}</div>
     </div>
 
     <div class="row">
-      <div class="col-3">Added By</div>
+      <div class="attributes col-3">Added By</div>
       <div class="col-3">{{ customer.addedBy.name }}</div>
     </div>
   </div>

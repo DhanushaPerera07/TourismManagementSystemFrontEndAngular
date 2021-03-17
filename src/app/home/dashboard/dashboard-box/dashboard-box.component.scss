@@ -11,14 +11,21 @@
   //border: 1px solid lightslategrey;
 }
 
-i{
-  font-size: 3.5rem;
-}
 
 .dashboard-icon{
-  font-size: 5rem;
+  font-size: 6rem;
 }
 
 .box-text{
-  text-align: center
+  text-align: center;
+  font-family: Roboto, sans-serif;
+  text-transform: capitalize;
+}
+
+h4{
+  font-size: clamp(1.8rem,1.5vw,2.4rem);
+}
+
+h1{
+  font-size: clamp(3.4rem,3vw,5rem);
 }

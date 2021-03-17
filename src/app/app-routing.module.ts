@@ -1,6 +1,5 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {MainNavComponent} from './main-nav/main-nav.component';
 import {SignInComponent} from './signin/sign-in.component';
 import {CustomerComponent} from './customer/customer.component';
 import {NotFoundComponent} from './not-found/not-found.component';
@@ -21,7 +20,7 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
-    data: {breadcrumb: 'Home'}
+    data: {breadcrumb: 'Home'},
   },
   {
     path: 'customer',
@@ -42,7 +41,8 @@ const routes: Routes = [
         path: ':id',
         component: ViewCustomerComponent,
         data: {breadcrumb: 'Details'},
-      }, {
+      },
+      {
         path: '',
         component: ManageCustomerComponent,
         data: {breadcrumb: 'Customer list'}
@@ -70,6 +70,10 @@ const routes: Routes = [
         data: {breadcrumb: 'Manage Accommodation'}
       }
     ]
+  },
+  {
+    path: 'destination',
+    component: NotFoundComponent
   },
   {
     path: 'signin',

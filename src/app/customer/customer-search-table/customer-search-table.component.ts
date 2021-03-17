@@ -21,6 +21,7 @@ export class CustomerSearchTableComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
+    ((document.getElementsByClassName('mat-form-field-wrapper')[0]) as HTMLDivElement).style.padding = '0px';
   }
 
   ngAfterViewInit(): void {

@@ -69,7 +69,6 @@ export class AddEditCustomerComponent implements OnInit
   }
 
   initializeCustomerObject(): void {
-    console.log('initializing customer obj...!');
     this.customer = {
       id: 0,
       name: '',

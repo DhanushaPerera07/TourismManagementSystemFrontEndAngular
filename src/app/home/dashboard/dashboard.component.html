@@ -1,15 +1,15 @@
-
 <div class="dashboard-container">
-  <div class="container">
 
-    <!-- dashboard row -->
+  <div class="dashboard-header">
+    <h5>Dashboard</h5>
+  </div>
+
+
+  <div class="container-fluid remove-padding"><!-- dashboard row -->
     <div class="row">
-      <div class="col-sm-12 col-md-6 col-lg-4 col-12 margin-bottom" *ngFor="let dashboardItem of dashboardBoxList">
+      <div *ngFor="let dashboardItem of dashboardBoxList" class="col-sm-12 col-md-6 col-lg-4 col-12 margin-bottom">
         <app-dashboard-box [stat]="dashboardItem"></app-dashboard-box>
       </div>
     </div>
-
-
-
   </div>
 </div>

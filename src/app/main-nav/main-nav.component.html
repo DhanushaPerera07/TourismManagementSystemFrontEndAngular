@@ -1,49 +1,36 @@
 <div class="main-header-component">
   <div class="container-fluid">
     <div class="row header">
-      <div class="col-3">
-        <section class="header_left">
-          <img alt="Elephas vacations company logo" src="./assets/logo/black-elephant-logo.png">
-          <h4>Elephas Vacation</h4>
-        </section>
+      <div class="col-sm-6 col-md-8 col-lg-9 col-6 header_left">
+        <img alt="Elephas vacations company logo" src="./assets/logo/black-elephant-logo.png">
+        <span class="header_text">Elephas Vacation</span>
       </div>
-      <div class="col-6">
-        <ul class="header_center">
-          <li><a routerLink="/home">Home</a></li>
-          <li><a routerLink="/customer">Customer</a></li>
-          <li><a routerLink="/packages">Packages</a></li>
-          <li><a routerLink="/accommodation">Accommodation</a></li>
-          <li><a routerLink="/transport">Transport</a></li>
-          <li><a routerLink="/guide">Guide</a></li>
-          <li><a routerLink="/famousdestination">Famous Destination</a></li>
-          <li *ngIf="true"><a routerLink="/admin">Admin</a></li>
-          <!--    <li>Hotel</li>-->
-          <!--    <li>Driver & Vehicle</li>-->
-          <!--    <li>Vehicle</li>-->
-          <!--    <li>Vehicle</li>-->
-        </ul>
-      </div>
-      <div class="col-3">
-        <section class="header_right">
-          <span>{{ employee.name }}</span>
-          <img alt="employee-profile-photo" src="./assets/employee/profile-photo/user-profile-photo.svg">
-          <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="icon-button with a menu to user manage profile">
-            <i class="bi bi-chevron-down"></i>
+      <div class="col-sm-6 col-md-4 col-lg-3 col-6 header_right">
+        <span>{{ employee.name }}</span>
+        <img alt="employee-profile-photo" src="./assets/employee/profile-photo/user-profile-photo.svg">
+        <button [matMenuTriggerFor]="menu" aria-label="icon-button with a menu to user manage profile" mat-icon-button>
+          <i class="bi bi-chevron-down"></i>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button (click)="openDialogBox()" mat-menu-item>
+            <mat-icon>edit</mat-icon>
+            <span>Manage Profile</span>
           </button>
-          <mat-menu #menu="matMenu">
-            <button mat-menu-item (click)="openDialogBox()">
-              <mat-icon>edit</mat-icon>
-              <span>Manage Profile</span>
-            </button>
-            <button mat-menu-item (click)="onLogout()">
-              <mat-icon>logout</mat-icon>
-              <span>Logout</span>
-            </button>
-          </mat-menu>
-        </section>
+          <button (click)="onLogout()" mat-menu-item>
+            <mat-icon>logout</mat-icon>
+            <span>Logout</span>
+          </button>
+        </mat-menu>
       </div>
     </div>
+  </div>
 
-
+  <div class="container-fluid">
+    <div class="header_center">
+      <app-navigation></app-navigation>
+    </div>
   </div>
 </div>
+
+<router-outlet></router-outlet>
+

@@ -1,5 +1,7 @@
 .customer-view-data-container{
   padding: 2rem 0;
+  font-family: "Roboto Light", sans-serif;
+  font-size: clamp(1.6rem,1vw,2.4rem);
 }
 
 .row{
@@ -9,7 +11,11 @@
 }
 
 .divider{
-  margin-bottom: 1rem;
+  margin: 2rem 0;
+}
+
+.make-space{
+  margin: 2rem 0;
 }
 
 .customer-details, .additional-details{
@@ -18,4 +24,18 @@
 
 .additional-details>mat{
   width: 100%;
+}
+
+h5{
+  font-family: "Roboto Light", sans-serif;
+  font-size: clamp(1.6rem,1.2vw,2.4rem);
+  font-weight: bold;
+}
+
+.attributes{
+  font-family: Roboto;
+}
+
+.attributes::after{
+  content: ':';
 }

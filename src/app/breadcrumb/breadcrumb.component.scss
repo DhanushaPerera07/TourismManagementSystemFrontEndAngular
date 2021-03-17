@@ -1,0 +1,12 @@
+breadcrumb{
+  font-family: "Roboto Light", sans-serif;
+  font-size: clamp(1.4rem,1vw,1.8rem);
+}
+
+.breadcrumb{
+  background-color: transparent;
+}
+
+ol .breadcrumb{
+  padding: 0;
+}

@@ -1,34 +1,75 @@
-//.customer-section{
-//  margin-top: 2rem;
-//  align-items: center;
-//}
+// =====================================================================
+// Reusable styles - start
+// =====================================================================
 
-.customer_header{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  & input{
-    width: 25vw;
-    height: fit-content;
-  }
+@mixin font-family-roboto-light {
+  font-family: 'Roboto Light', sans-serif;
 }
 
-.customer_header_top{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+@mixin add-button-styles{
+  color: white;
+  background-color: #0c9463;
+  font-size : clamp(1.6rem,1vw,2rem);
+  padding: 1rem;
+  border-radius: 10px;
+}
 
+// =====================================================================
+// Reusable styles - end
+// =====================================================================
+
+.customer_header_container{
+  @include font-family-roboto-light;
+  padding-bottom: 3rem;
+}
+
+h5{
+  font-size: clamp(1.6rem,1.2vw,2.4rem);
+  font-weight: bold;
+}
+
+// =====================================================================
+// Responsive styles - start
+// =====================================================================
+
+@media screen and (min-width: 576px) {
+  .customer_header_right{
+    justify-content: flex-end;
+  }
+
+}
+
+
+@media screen and (max-width: 576px) {
+   .customer_header_left , .customer_search, .customer_header_right{
+    //background-color: red;
+    margin-bottom: 1rem;
+  }
+
+}
+
+// =====================================================================
+// Responsive styles - end
+// =====================================================================
+
+.customer_header{
+  align-items: center;
+}
+
+.customer_header_left{
+  //display: flex;
 }
 
 .customer_search{
+}
+
+.customer_header_right{
   display: flex;
-  align-items: center;
+}
 
-  & input{
-    height: 100%;
-  }
-
+mat-form-field{
+  width: 100%;
+  font-size : clamp(1.6rem,1vw,2rem);
 }
 
 .divider{
@@ -37,10 +78,8 @@
 }
 
 
-.btn-add,.btn-search{
-  //height: fit-content;
-  color: white;
-  background-color: #0c9463;
+.btn-add{
+  @include add-button-styles;
 }
 
 .btn-search{
@@ -51,6 +90,3 @@
   height: 100%;
 }
 
-mat-form-field{
-  width: 20vw;
-}

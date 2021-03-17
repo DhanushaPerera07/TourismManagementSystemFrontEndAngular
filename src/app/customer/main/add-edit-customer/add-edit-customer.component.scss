@@ -41,3 +41,20 @@ textarea {
 .textfield-mat-form-field {
   width: 100%;
 }
+
+h5{
+  font-family: "Roboto Light", sans-serif;
+  font-size: clamp(1.6rem,1.2vw,2.4rem);
+  font-weight: bold;
+}
+
+mat-label{
+  font-family: "Roboto", sans-serif;
+  font-size: clamp(1.4rem,1vw,2.4rem);
+
+}
+
+input, textarea{
+  font-family: "Roboto Light", sans-serif;
+  font-size: clamp(1.4rem,1vw,2.4rem);
+}

@@ -1,3 +1,32 @@
+@mixin table-header-styles {
+  font-family: 'Roboto Medium', sans-serif;
+  background-color: #0c9463;
+  color: white;
+  font-size: clamp(1.6rem,1.2vw,2.4rem);
+  text-transform: capitalize;
+}
+
+@mixin table-row-styles {
+  font-family: 'Roboto Light', sans-serif;
+  font-size: clamp(1.6rem,1.2vw,2.4rem);
+}
+
+.customer-table-container{
+  //@include font-family-roboto-light;
+}
+
+.customer_section_title> p{
+  font-family: 'Roboto Light', sans-serif;
+  font-size: clamp(1.6rem,1vw,2.4rem);
+}
+
+
+@media screen and (max-width: 992px) {
+  .customer-table-container{
+    overflow: scroll;
+  }
+}
+
 table{
   width: 100%;
 }
@@ -11,7 +40,8 @@ table{
 }
 
 .icon-size{
-  font-size: 1.25rem;
+  //font-size: 1.25rem;
+  font-size: clamp(1.6rem,1.2vw,2.4rem);
   cursor: pointer;
 }
 
@@ -29,14 +59,19 @@ table{
 
 
 th{
-  background-color: #0c9463;
-  color: white;
-  font-weight: bold;
-  font-size: 0.9rem;
+  //background-color: #0c9463;
+  //color: white;
+  //font-weight: bold;
+  //font-size: 0.9rem;
+  @include table-header-styles;
 }
 
 .make-cursor-pointer{
   cursor: pointer;
+}
+
+tr{
+  @include table-row-styles;
 }
 
 tr:nth-child(even) {

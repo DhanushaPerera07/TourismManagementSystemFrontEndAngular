@@ -10,6 +10,7 @@ import {HomeComponent} from './home/home.component';
 import {AccommodationComponent} from './accommodation/accommodation.component';
 import {ManageAccommodationComponent} from './accommodation/main/manage-accommodation/manage-accommodation.component';
 import {AddEditAccommodationComponent} from './accommodation/main/add-edit-accommodation/add-edit-accommodation.component';
+import {ViewAccommodationComponent} from './accommodation/main/view-accommodation/view-accommodation.component';
 
 const routes: Routes = [
   {
@@ -63,6 +64,11 @@ const routes: Routes = [
         path: 'edit/:id',
         component: AddEditAccommodationComponent,
         data: {breadcrumb: 'Edit'}
+      },
+      {
+        path: 'view/:id',
+        component: ViewAccommodationComponent,
+        data: {breadcrumb: 'View'}
       },
       {
         path: '',

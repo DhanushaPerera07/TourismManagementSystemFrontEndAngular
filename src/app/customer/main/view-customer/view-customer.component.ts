@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Customer} from '../../../interface/customer';
+import {Customer} from '../../../shared/interface/customer';
 import {CustomerService} from '../../../shared/service/customer.service';
 
 export let customerVariable: Customer;

@@ -1,5 +1,5 @@
 import {Component, Input, OnInit, ViewChild} from '@angular/core';
-import {DashboardBox} from '../../../interface/dashboard-box';
+import {DashboardBox} from '../../../shared/interface/dashboard-box';
 
 @Component({
   selector: 'app-dashboard-box',

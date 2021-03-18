@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {CustomerTableComponent} from '../../../customer/component/customer-table/customer-table.component';
+import {AccommodationTableComponent} from '../accommodation-table/accommodation-table.component';
 
 @Component({
   selector: 'app-accommodation-search-table',
@@ -6,6 +8,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./accommodation-search-table.component.scss']
 })
 export class AccommodationSearchTableComponent implements OnInit {
+
+  /* customer table child component */
+  @ViewChild(AccommodationTableComponent)
+  appAccommodationTable!: AccommodationTableComponent;
 
   constructor() { }
 
@@ -15,7 +21,7 @@ export class AccommodationSearchTableComponent implements OnInit {
 
   /* filter the table data according to input value */
   applyFilter(eventTarget: any): void {
-
+    this.appAccommodationTable.applyFilterToTable(eventTarget.value);
   }
 
   redirectToAddAccommodation(): void {

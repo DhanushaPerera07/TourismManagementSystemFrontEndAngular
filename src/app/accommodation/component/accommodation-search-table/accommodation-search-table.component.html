@@ -1,4 +1,4 @@
-<div class="container accommodation-search-table">
+<div class="accommodation-search-table">
   <!-- search-table, header section -->
   <div class="search_header_section row">
     <div class="search_header_left col-12 col-sm-4">
@@ -6,13 +6,13 @@
     </div>
 
     <div class="search_header_center col-12 col-sm-4">
-      <mat-form-field class="in_search" appearance="outline" floatLabel="never">
+      <mat-form-field appearance="outline" class="in_search" floatLabel="never">
         <input (keyup)="applyFilter($event.target);" matInput placeholder="Search an accommodation">
       </mat-form-field>
-<!--      <button class="btn btn-search" type="button">-->
-<!--        <i class="bi bi-search"></i>-->
-<!--        Search-->
-<!--      </button>-->
+      <!--      <button class="btn btn-search" type="button">-->
+      <!--        <i class="bi bi-search"></i>-->
+      <!--        Search-->
+      <!--      </button>-->
     </div>
 
     <div class="search_header_right col-12 col-sm-4">
@@ -26,6 +26,8 @@
   </div>
 
 
-  <!-- accommodation table component -->
-  <app-accommodation-table></app-accommodation-table>
 </div>
+
+<!-- accommodation table component -->
+<app-accommodation-table></app-accommodation-table>
+

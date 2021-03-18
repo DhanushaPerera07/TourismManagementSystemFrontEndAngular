@@ -1,6 +1,6 @@
 import {Position} from './position.enum';
 import {Status} from './status.enum';
-import {Gender} from '../gender.enum';
+import {Gender} from '../../enum/gender.enum';
 
 export class Employee {
 

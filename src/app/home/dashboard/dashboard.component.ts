@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {DashboardService} from '../../shared/service/dashboard/dashboard.service';
-import {DashboardBox} from '../../interface/dashboard-box';
+import {DashboardBox} from '../../shared/interface/dashboard-box';
 
 @Component({
   selector: 'app-dashboard',

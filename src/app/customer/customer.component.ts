@@ -2,7 +2,7 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {Observable} from 'rxjs';
 import {startWith, map} from 'rxjs/operators';
-import {CustomerTableComponent} from './customer-table/customer-table.component';
+import {CustomerTableComponent} from './component/customer-table/customer-table.component';
 
 @Component({
   selector: 'app-customer',

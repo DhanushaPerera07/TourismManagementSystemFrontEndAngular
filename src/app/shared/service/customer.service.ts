@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Customer} from '../../interface/customer';
+import {Customer} from '../interface/customer';
 import {Employee} from '../model/employee/employee.model';
 
 /* sample customer data */

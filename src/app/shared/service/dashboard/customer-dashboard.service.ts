@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {DashboardBox} from '../../../interface/dashboard-box';
+import {DashboardBox} from '../../interface/dashboard-box';
 
 const customerDashboardStat = {
   id: 1,

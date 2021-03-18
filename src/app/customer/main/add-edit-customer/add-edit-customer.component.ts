@@ -1,7 +1,7 @@
 import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {Router} from '@angular/router';
 import {CustomerService} from '../../../shared/service/customer.service';
-import {Customer} from '../../../interface/customer';
+import {Customer} from '../../../shared/interface/customer';
 import {Employee} from '../../../shared/model/employee/employee.model';
 
 @Component({

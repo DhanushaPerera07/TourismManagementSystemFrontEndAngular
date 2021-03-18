@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {Employee} from '../model/employee/employee.model';
 import {Position} from '../model/employee/position.enum';
 import {Status} from '../model/employee/status.enum';
-import {Gender} from '../model/gender.enum';
+import {Gender} from '../enum/gender.enum';
 
 const employeeSample = new Employee(2,
   'Prasad Madusanka',

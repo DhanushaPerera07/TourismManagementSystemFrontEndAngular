@@ -1,5 +1,5 @@
 import {Component, Input, OnInit, ViewChild} from '@angular/core';
-import {Customer} from '../../interface/customer';
+import {Customer} from '../../../shared/interface/customer';
 
 @Component({
   selector: 'app-customer-view-data',

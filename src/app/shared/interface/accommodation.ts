@@ -39,6 +39,7 @@ export interface Accommodation {
   contact: string;
   email: string;
   address: string;
+  website: string;
   accommodationPackage: AccommodationPackage[];
   specialDetails?: string;
   remarks?: string;

@@ -11,7 +11,7 @@
         <button [matMenuTriggerFor]="menu" aria-label="icon-button with a menu to user manage profile" mat-icon-button>
           <i class="bi bi-chevron-down"></i>
         </button>
-        <mat-menu #menu="matMenu">
+        <mat-menu class="menu" #menu="matMenu">
           <button (click)="openDialogBox()" mat-menu-item>
             <mat-icon>edit</mat-icon>
             <span>Manage Profile</span>

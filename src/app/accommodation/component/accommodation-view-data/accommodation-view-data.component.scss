@@ -1,0 +1,91 @@
+// =====================================================================
+// Reusable styles - start
+// =====================================================================
+
+@mixin font-family-roboto-light {
+  font-family: 'Roboto Light', sans-serif;
+}
+
+
+// =====================================================================
+// Reusable styles - end
+// =====================================================================
+
+
+
+.accommodation-view-data-container{
+  @include font-family-roboto-light;
+
+  & .header_section{
+    padding: 2rem 0;
+  }
+}
+
+.accommodation-header-container{
+  border-bottom: 1px solid yellowgreen;
+}
+
+.accommodation-type-container{
+  padding: 1rem 0;
+}
+
+.accommodation-header{
+  padding: 1rem 0;
+
+  & span{
+    font-family: "Roboto Light", sans-serif;
+    font-weight: lighter;
+    font-size: clamp(1.6rem,1.2vw,2.4rem);
+    color: black;
+    margin-left: 1rem;
+  }
+}
+
+.badge-style{
+  font-family: "Roboto Light", sans-serif;
+  background-color: yellowgreen;
+  color: white;
+  font-size: clamp(1.6rem,1.2vw,2.4rem);
+}
+
+h5{
+  font-size: clamp(1.6rem,1.5vw,2.4rem);
+  font-weight: bold;
+}
+
+i{
+  font-size: clamp(1.6rem,1.2vw,2.4rem);
+  padding: 0 0.5rem;
+  color: #ffbe0f;
+}
+
+.star-rating-container{
+  display: flex;
+  justify-content: flex-end;
+}
+
+// img
+.accommodation-img{
+  object-fit: scale-down;
+  //width: 100%;
+  height: 400px;
+}
+
+.label{
+  font-family: "Roboto", sans-serif;
+  font-size: clamp(1.6rem,1vw,2.4rem);
+}
+
+.label::after{
+  content: ':';
+}
+
+.detail{
+  font-family: "Roboto Light", sans-serif;
+  font-weight: lighter;
+  font-size: clamp(1.6rem,1vw,2.4rem);
+}
+
+.info{
+  padding-bottom: 3rem;
+}

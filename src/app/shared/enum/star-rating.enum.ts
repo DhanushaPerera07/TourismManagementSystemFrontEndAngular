@@ -21,17 +21,20 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+
 /**
  * @author : Dhanusha Perera
  * @since : 17/03/2021
  */
 
 export enum StarRatingEnum {
-  UNKNOWN = 'UNKNOWN',
-  ZERO_STAR = '1 STAR',
-  ONE_STAR = '1 STAR',
-  TWO_STAR = '2 STAR',
-  THREE_STAR = '3 STAR',
-  FOUR_STAR = '4 STAR',
-  FIVE_STAR = '5 STAR'
+  UNKNOWN = -1,
+  ZERO_STAR,
+  ONE_STAR,
+  TWO_STAR,
+  THREE_STAR,
+  FOUR_STAR,
+  FIVE_STAR,
+  SIX_STAR,
+  SEVEN_STAR
 }

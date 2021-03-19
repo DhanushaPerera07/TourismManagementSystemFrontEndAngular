@@ -1,1 +1,86 @@
-<p>accommodation-view-data works!</p>
+<div class="accommodation-view-data-container">
+  <section class="header_section">
+    <div class="accommodation-header-container container">
+      <div class="row">
+        <div class="col p-0">
+          <h5 class="accommodation-header">{{ accommodation.name }}<span>- {{ accommodation.situatedIn }}</span></h5>
+        </div>
+        <div class="col p-0 star-rating-container">
+          <div *ngFor="let star of starRatings" class="star-rating">
+            <i class="bi bi-star-fill"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="accommodation-type-container container">
+      <h5><span class="badge badge-style">{{ accommodation.type }}</span></h5>
+    </div>
+    <!--    <h4 class="accommodation-type">Hotel</h4>-->
+  </section>
+
+  <section class="accommodation-details container p-0">
+    <div class="info">
+      <div class="label">
+        Accommodation ID
+      </div>
+      <div class="detail">
+        A00{{ accommodation.id }}
+      </div>
+    </div>
+
+    <div class="info">
+      <div class="label">
+        Email
+      </div>
+      <div class="detail">
+        {{ (accommodation.email == '') ? '-': accommodation.email}}
+      </div>
+    </div>
+    <div class="info">
+      <div class="label">
+        Contact
+      </div>
+      <div class="detail">
+        {{ accommodation.contact }}
+      </div>
+    </div>
+
+    <div class="info">
+      <div class="label">
+        Website
+      </div>
+      <div class="detail">
+        <a href="{{ (accommodation.website == '') ? '#' : accommodation.website }}" target="_blank">{{ (accommodation.website == '')?'-' : accommodation.website }}</a>
+      </div>
+    </div>
+
+    <div class="info">
+      <div class="label">
+        Address
+      </div>
+      <div class="detail">
+        {{ (accommodation.address == '') ? '-' : accommodation.address }}
+      </div>
+    </div>
+
+    <div class="info">
+      <div class="label">
+        Details
+      </div>
+      <div class="detail">
+        {{ (accommodation.specialDetails == '') ? '-' : accommodation.specialDetails }}
+      </div>
+    </div>
+
+    <div class="info">
+      <div class="label">
+        Remarks
+      </div>
+      <div class="detail">
+        {{ (accommodation.remarks == '') ? '-' : accommodation.remarks }}
+      </div>
+    </div>
+
+  </section>
+
+</div>

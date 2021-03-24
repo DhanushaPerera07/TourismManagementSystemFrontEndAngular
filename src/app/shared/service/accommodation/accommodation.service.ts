@@ -50,7 +50,7 @@ export const ACCOMMODATION_DUMMY_DATA: Accommodation[] = [
 export class AccommodationService {
 
   accommodationData = ACCOMMODATION_DUMMY_DATA;
-  selectedAccommodationData: Accommodation = ACCOMMODATION_DUMMY_DATA[0];
+  // selectedAccommodationData: Accommodation = ACCOMMODATION_DUMMY_DATA[0];
 
   constructor() {
   }
@@ -60,5 +60,11 @@ export class AccommodationService {
    * @returns Accommodation[]
    */
   getAccommodationList(): void { // Accommodation[]
+  }
+
+  getAccommodationDetails(id: number): Accommodation | null{
+    console.log(id);
+    const result = this.accommodationData.find(value => value.id === id);
+    return (result) ? result : null;
   }
 }

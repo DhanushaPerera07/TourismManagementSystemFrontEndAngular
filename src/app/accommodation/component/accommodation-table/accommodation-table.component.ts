@@ -4,6 +4,7 @@ import {AccommodationService} from '../../../shared/service/accommodation/accomm
 import {MatSort} from '@angular/material/sort';
 import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
 import {Accommodation} from '../../../shared/interface/accommodation';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-accommodation-table',
@@ -28,7 +29,8 @@ export class AccommodationTableComponent implements OnInit, AfterViewInit {
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
 
-  constructor(private accommodationService: AccommodationService) {
+  constructor(private accommodationService: AccommodationService,
+              private router: Router) {
     this.dataSource = new MatTableDataSource<Accommodation>(this.accommodationService.accommodationData);
   }
 
@@ -58,5 +60,10 @@ export class AccommodationTableComponent implements OnInit, AfterViewInit {
 
   deleteRecord(id: any): void {
     console.log(id);
+  }
+
+  viewAccommodationRecord(row: any): void {
+    console.log(row);
+    this.router.navigateByUrl('/accommodation/view/' + row.id);
   }
 }

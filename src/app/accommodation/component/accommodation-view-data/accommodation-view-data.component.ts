@@ -1,7 +1,8 @@
-import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {StarRatingEnum} from '../../../shared/enum/star-rating.enum';
 import {AccommodationService} from '../../../shared/service/accommodation/accommodation.service';
 import {Accommodation} from '../../../shared/interface/accommodation';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-accommodation-view-data',
@@ -14,13 +15,31 @@ export class AccommodationViewDataComponent implements OnInit, AfterViewInit {
 
   accommodation!: Accommodation;
 
-  constructor(private accommodationService: AccommodationService) {
-    this.accommodation = this.accommodationService.selectedAccommodationData;
+  constructor(private accommodationService: AccommodationService,
+              private activatedRoute: ActivatedRoute,
+              private router: Router) {
+    // this.accommodation = this.accommodationService.selectedAccommodationData;
   }
 
   ngOnInit(): void {
-    this.setStars(this.accommodation.starRating);
-    console.log(JSON.stringify(this.accommodation));
+
+    // console.log(JSON.stringify(this.accommodation));
+    this.activatedRoute.params.subscribe((value => {
+      const id = Number.parseInt(value.id, 10);
+      if (Number.isInteger(id)) {
+        const result = this.accommodationService.getAccommodationDetails(id);
+        if (result) {
+          this.accommodation = result;
+          this.setStars(this.accommodation.starRating);
+        } else {
+          console.error('Error: 404 - No accommodation record found for that ID');
+          this.router.navigateByUrl('/accommodation');
+        }
+      } else {
+        console.error('Error: 400 - Invalid ID in the URL');
+        this.router.navigateByUrl('/accommodation');
+      }
+    }));
   }
 
   ngAfterViewInit(): void {

@@ -49,6 +49,7 @@ import { AccommodationPackageSearchTableComponent } from './accommodation/compon
 import { AccommodationPackageTableComponent } from './accommodation/component/accommodation-package/accommodation-package-table/accommodation-package-table.component';
 import { AccommodationPackageViewDataComponent } from './accommodation/component/accommodation-package/accommodation-package-view-data/accommodation-package-view-data.component';
 import {MatTabsModule} from '@angular/material/tabs';
+import { AddEditAccommodationPackageComponent } from './accommodation/component/accommodation-package/add-edit-accommodation-package/add-edit-accommodation-package.component';
 
 @NgModule({
   declarations: [
@@ -82,7 +83,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     AccommodationViewDataComponent,
     AccommodationPackageSearchTableComponent,
     AccommodationPackageTableComponent,
-    AccommodationPackageViewDataComponent
+    AccommodationPackageViewDataComponent,
+    AddEditAccommodationPackageComponent
   ],
   imports: [
     BrowserModule,

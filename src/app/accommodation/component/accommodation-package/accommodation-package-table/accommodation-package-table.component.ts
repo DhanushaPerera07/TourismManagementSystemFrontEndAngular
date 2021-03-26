@@ -7,6 +7,7 @@ import {Router} from '@angular/router';
 import {AccommodationPackage} from '../../../../shared/interface/accommodation-package';
 import {MatDialog, MatDialogConfig, MatDialogRef} from '@angular/material/dialog';
 import {AccommodationPackageViewDataComponent} from '../accommodation-package-view-data/accommodation-package-view-data.component';
+import {AddEditAccommodationPackageComponent} from '../add-edit-accommodation-package/add-edit-accommodation-package.component';
 
 @Component({
   selector: 'app-accommodation-package-table',
@@ -40,6 +41,7 @@ export class AccommodationPackageTableComponent implements OnInit, AfterViewInit
 
   dialogConfig = new MatDialogConfig();
   dialogToViewDataRef!: MatDialogRef<any>;
+  dialogToAddEditDataRef!: MatDialogRef<AddEditAccommodationPackageComponent>;
 
 
   constructor(private accommodationService: AccommodationService,
@@ -79,7 +81,8 @@ export class AccommodationPackageTableComponent implements OnInit, AfterViewInit
 
   editRecord(element: any): void {
     console.log(element);
-    // this.dialogToAddEditDataRef = this.dialog.open(AccommodationPackageAddEditDataComponent, this.dialogConfig);
+    this.dialogConfig.data = element; // pass the selected accommodation package object to dialog box
+    this.dialogToAddEditDataRef = this.dialog.open(AddEditAccommodationPackageComponent, this.dialogConfig);
   }
 
   deleteRecord(id: any): void {

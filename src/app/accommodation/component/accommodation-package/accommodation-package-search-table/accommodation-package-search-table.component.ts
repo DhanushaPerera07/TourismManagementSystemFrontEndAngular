@@ -1,7 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {MatDialog, MatDialogConfig, MatDialogRef} from '@angular/material/dialog';
-import {NotFoundComponent} from '../../../../not-found/not-found.component';
 import {AccommodationPackageTableComponent} from '../accommodation-package-table/accommodation-package-table.component';
+import {AddEditAccommodationPackageComponent} from '../add-edit-accommodation-package/add-edit-accommodation-package.component';
 
 @Component({
   selector: 'app-accommodation-package-search-table',
@@ -37,7 +37,7 @@ export class AccommodationPackageSearchTableComponent implements OnInit {
   }
 
   openAddEditAccommodationPackage(): void {
-    this.dialogToAddEditDataRef = this.dialog.open(NotFoundComponent, this.dialogConfig);
+    this.dialogToAddEditDataRef = this.dialog.open(AddEditAccommodationPackageComponent, this.dialogConfig);
     // this.dialogToAddEditDataRef.afterClosed().subscribe(() => {
     //   console.log('Add accommodation package dialog box closed!');
     // });

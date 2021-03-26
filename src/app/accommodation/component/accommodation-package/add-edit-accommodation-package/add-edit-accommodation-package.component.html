@@ -1,1 +1,499 @@
-<p>add-edit-accommodation-package works!</p>
+<div class="add-edit-accommodation-package-container container">
+
+  <div class="accommodation-package-view-data-container container">
+    <div class="header-container">
+      <h5 *ngIf="isAdding">Add Accommodation
+        Package</h5>
+      <h5 *ngIf="!isAdding">Edit Accommodation
+        Package</h5>
+    </div>
+  </div>
+
+  <div class="accommodation-package-view-data-container container">
+
+    <div class="package-details-container">
+      <div *ngIf="!isAdding" class="row">
+        <div class="col ">
+          <mat-form-field appearance="outline" class="textfield-mat-form-field">
+            <mat-label>Accommodation Package ID&nbsp;</mat-label>
+            <input
+              #accommodationPackageID
+              [(ngModel)]="accommodationPackageForAddOrEdit.id"
+              class="accommodationPackageID"
+              disabled
+              id="id_accommodationPackageID"
+              matInput
+              name="accommodationPackageID" placeholder="Accommodation Package ID">
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <mat-form-field appearance="outline" class="textfield-mat-form-field">
+            <mat-label>Valid Period&nbsp;</mat-label>
+            <input
+              #validPeriod
+              [(ngModel)]="accommodationPackageForAddOrEdit.validPeriod"
+              class="validPeriod"
+              id="id_validPeriod"
+              matInput
+              name="validPeriod"
+              placeholder="Valid Period">
+          </mat-form-field>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- meal plan -->
+  <div class="accommodation-package-view-data-container container">
+    <div class="header-container">
+      <h5>Meal Plan</h5>
+    </div>
+
+    <div class="package-details-container">
+      <div class="row">
+        <div class="col">
+          <mat-form-field appearance="outline" class="textfield-mat-form-field">
+            <mat-label>Room Only&nbsp;</mat-label>
+            <input
+              #roomOnly
+              [(ngModel)]="accommodationPackageForAddOrEdit.mealPlan.roomOnly"
+              class="roomOnly"
+              id="id_roomOnly"
+              matInput
+              name="roomOnly"
+              placeholder="Price For Room Only Meal Plan">
+            <span matSuffix>$&nbsp;</span>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <mat-form-field appearance="outline" class="textfield-mat-form-field">
+            <mat-label>Bed and Breakfast&nbsp;</mat-label>
+            <input
+              #bedAndBreakfast
+              [(ngModel)]="accommodationPackageForAddOrEdit.mealPlan.bedAndBreakfast"
+              class="bedAndBreakfast"
+              id="id_bedAndBreakfast"
+              matInput
+              name="bedAndBreakfast"
+              placeholder="Price For Bed and Breakfast Meal Plan">
+            <span matSuffix>$&nbsp;</span>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <mat-form-field appearance="outline" class="textfield-mat-form-field">
+            <mat-label>Half Board&nbsp;</mat-label>
+            <input
+              #halfBoard
+              [(ngModel)]="accommodationPackageForAddOrEdit.mealPlan.halfBoard"
+              class="halfBoard"
+              id="id_halfBoard"
+              matInput
+              name="halfBoard"
+              placeholder="Price For Half Board Meal Plan">
+            <span matSuffix>$&nbsp;</span>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <mat-form-field appearance="outline" class="textfield-mat-form-field">
+            <mat-label>Full Board&nbsp;</mat-label>
+            <input
+              #fullBoard
+              [(ngModel)]="accommodationPackageForAddOrEdit.mealPlan.fullBoard"
+              class="fullBoard"
+              id="id_fullBoard"
+              matInput
+              name="fullBoard"
+              placeholder="Price For Full Board Meal Plan">
+            <span matSuffix>$&nbsp;</span>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <mat-form-field appearance="outline" class="textfield-mat-form-field">
+            <mat-label>All Inclusive&nbsp;</mat-label>
+            <input
+              #allInclusive
+              [(ngModel)]="accommodationPackageForAddOrEdit.mealPlan.allInclusive"
+              class="allInclusive"
+              id="id_allInclusive"
+              matInput
+              name="allInclusive"
+              placeholder="Price For All Inclusive Meal Plan">
+            <span matSuffix>$&nbsp;</span>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class=" col">
+          <mat-form-field appearance="outline" class="textfield-mat-form-field">
+            <mat-label>Remarks&nbsp;</mat-label>
+            <textarea
+              #mealPlanRemarks
+              [(ngModel)]="accommodationPackageForAddOrEdit.mealPlan.remarks"
+              class="mealPlanRemarks"
+              id="id_mealPlanRemarks"
+              matInput
+              name="mealPlanRemarks"
+              placeholder="Remarks related to Meal Plan">
+            </textarea>
+          </mat-form-field>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- room plan -->
+  <div class="accommodation-package-view-data-container container">
+    <div class="header-container">
+      <h5>Room Plan</h5>
+    </div>
+
+    <div class="package-details-container">
+      <div class="row">
+        <div class="col">
+          <mat-form-field appearance="outline" class="textfield-mat-form-field">
+            <mat-label>Single Room&nbsp;</mat-label>
+            <input
+              #singleRoom
+              [(ngModel)]="accommodationPackageForAddOrEdit.roomPlan.singleRoom"
+              class="singleRoom"
+              id="id_singleRoom"
+              matInput
+              name="singleRoom"
+              placeholder="Price For Single Room">
+            <span matSuffix>$&nbsp;</span>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <mat-form-field appearance="outline" class="textfield-mat-form-field">
+            <mat-label>Double Room&nbsp;</mat-label>
+            <input
+              #doubleRoom
+              [(ngModel)]="accommodationPackageForAddOrEdit.roomPlan.doubleRoom"
+              class="doubleRoom"
+              id="id_doubleRoom"
+              matInput
+              name="doubleRoom"
+              placeholder="Price For Double Room">
+            <span matSuffix>$&nbsp;</span>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <mat-form-field appearance="outline" class="textfield-mat-form-field">
+            <mat-label>Triple Room&nbsp;</mat-label>
+            <input
+              #tripleRoom
+              [(ngModel)]="accommodationPackageForAddOrEdit.roomPlan.tripleRoom"
+              class="tripleRoom"
+              id="id_tripleRoom"
+              matInput
+              name="tripleRoom"
+              placeholder="Price For Triple Room">
+            <span matSuffix>$&nbsp;</span>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <mat-form-field appearance="outline" class="textfield-mat-form-field">
+            <mat-label>Quad Room&nbsp;</mat-label>
+            <input
+              #quadRoom
+              [(ngModel)]="accommodationPackageForAddOrEdit.roomPlan.quadRoom"
+              class="quadRoom"
+              id="id_quadRoom"
+              matInput
+              name="quadRoom"
+              placeholder="Price For Quad Room">
+            <span matSuffix>$&nbsp;</span>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <mat-form-field appearance="outline" class="textfield-mat-form-field">
+            <mat-label>Family&nbsp;</mat-label>
+            <input
+              #family
+              [(ngModel)]="accommodationPackageForAddOrEdit.roomPlan.family"
+              class="family"
+              id="id_family"
+              matInput
+              name="family"
+              placeholder="Price For Family Room">
+            <span matSuffix>$&nbsp;</span>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <mat-form-field appearance="outline" class="textfield-mat-form-field">
+            <mat-label>Queen&nbsp;</mat-label>
+            <input
+              #queen
+              [(ngModel)]="accommodationPackageForAddOrEdit.roomPlan.queen "
+              class="queen"
+              id="id_queen"
+              matInput
+              name="queen"
+              placeholder="Price For Queen Room">
+            <span matSuffix>$&nbsp;</span>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <mat-form-field appearance="outline" class="textfield-mat-form-field">
+            <mat-label>King Room&nbsp;</mat-label>
+            <input
+              #king
+              [(ngModel)]="accommodationPackageForAddOrEdit.roomPlan.king"
+              class="king"
+              id="id_king"
+              matInput
+              name="king"
+              placeholder="Price For King Room">
+            <span matSuffix>$&nbsp;</span>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <mat-form-field appearance="outline" class="textfield-mat-form-field">
+            <mat-label>Twin Room&nbsp;</mat-label>
+            <input
+              #twin
+              [(ngModel)]="accommodationPackageForAddOrEdit.roomPlan.twin"
+              class="twin"
+              id="id_twin"
+              matInput
+              name="twin"
+              placeholder="Price For Twin Room">
+            <span matSuffix>$&nbsp;</span>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <mat-form-field appearance="outline" class="textfield-mat-form-field">
+            <mat-label>Suite&nbsp;</mat-label>
+            <input
+              #suite
+              [(ngModel)]="accommodationPackageForAddOrEdit.roomPlan.suite"
+              class="suite"
+              id="id_suite"
+              matInput
+              name="suite"
+              placeholder="Price For Suite">
+            <span matSuffix>$&nbsp;</span>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <mat-form-field appearance="outline" class="textfield-mat-form-field">
+            <mat-label>Remarks (Room Plan)&nbsp;</mat-label>
+            <textarea
+              #roomPlanRemarks
+              [(ngModel)]="accommodationPackageForAddOrEdit.roomPlan.remarks"
+              class="roomPlanRemarks"
+              id="id_roomPlanRemarks"
+              matInput
+              name="roomPlanRemarks"
+              placeholder="Remarks related to Room Plan">
+            </textarea>
+          </mat-form-field>
+        </div>
+      </div>
+
+
+    </div>
+
+  </div>
+
+
+  <!-- child plan -->
+  <div class="accommodation-package-view-data-container container">
+    <div class="header-container">
+      <h5>Child Plan</h5>
+    </div>
+
+    <div class="package-details-container">
+      <div class="row">
+        <div class="col">
+          <mat-slide-toggle
+            #childPlanAvailability
+            [(ngModel)]="accommodationPackageForAddOrEdit.childPlan.isChildPlanAvailable"
+            id="id_childPlanAvailability"
+            name="childPlanAvailability">Child Plan Available
+          </mat-slide-toggle>
+        </div>
+      </div>
+
+      <div *ngIf="accommodationPackageForAddOrEdit.childPlan.isChildPlanAvailable" class="row">
+        <div class="col">
+          <mat-form-field appearance="outline" class="textfield-mat-form-field">
+            <mat-label>Child Plan Cost&nbsp;</mat-label>
+            <input
+              #childPlanCost
+              [(ngModel)]="accommodationPackageForAddOrEdit.childPlan.cost"
+              class="childPlanCost"
+              id="id_childPlanCost"
+              matInput
+              name="childPlanCost"
+              placeholder="Child Plan Cost">
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <mat-form-field appearance="outline" class="textfield-mat-form-field">
+            <mat-label>Remarks&nbsp;(Child Plan)</mat-label>
+            <textarea
+              #childPlanRemarks
+              [(ngModel)]="accommodationPackageForAddOrEdit.childPlan.remarks"
+              class="childPlanRemarks"
+              id="id_childPlanRemarks"
+              matInput
+              name="childPlanRemarks"
+              placeholder="Remarks related to Child Plan">
+            </textarea>
+          </mat-form-field>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Guide plan -->
+  <div class="accommodation-package-view-data-container container">
+    <div class="header-container">
+      <h5>Guide Plan</h5>
+    </div>
+
+    <div class="package-details-container">
+      <div class="row">
+        <div class="col">
+          <mat-slide-toggle
+            #guidePlanAvailability
+            [(ngModel)]="accommodationPackageForAddOrEdit.guidePlan.isGuideRoomSupplied"
+            id="id_guidePlanAvailability"
+            name="guidePlanAvailability">Guide Plan Available
+          </mat-slide-toggle>
+        </div>
+      </div>
+
+      <div *ngIf="false" class="row">
+        <div class="col">
+          <mat-form-field appearance="outline" class="textfield-mat-form-field">
+            <mat-label>Guide Plan Cost&nbsp;</mat-label>
+            <input
+              #guidePlanCost
+              [(ngModel)]="accommodationPackageForAddOrEdit.guidePlan.guideRoom"
+              class="guidePlanCost"
+              id="id_guidePlanCost"
+              matInput
+              name="guidePlanCost"
+              placeholder="Guide Plan Cost">
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <mat-form-field appearance="outline" class="textfield-mat-form-field">
+            <mat-label>Remarks&nbsp;(Guide Plan)</mat-label>
+            <textarea
+              #guidePlanRemarks
+              [(ngModel)]="accommodationPackageForAddOrEdit.guidePlan.remarks"
+              class="guidePlanRemarks"
+              id="id_guidePlanRemarks"
+              matInput
+              name="guidePlanRemarks"
+              placeholder="Remarks related to Guide Plan">
+            </textarea>
+          </mat-form-field>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- additional details -->
+  <div *ngIf="!isAdding"
+       class="accommodation-package-view-data-container container">
+    <div class="header-container">
+      <h5>Additional Details</h5>
+    </div>
+
+    <div class="package-details-container">
+      <div class="row">
+        <div class="attributes col-4">
+          Date Created
+        </div>
+        <div class="col-8">
+          {{ accommodationPackageForAddOrEdit.dateCreated }}
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="attributes col-4">
+          Created By
+        </div>
+        <div class="col-8">
+          {{ accommodationPackageForAddOrEdit.createdBy }}
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="operations-container">
+    <div class="form-button-section">
+      <button *ngIf="isAdding"
+              class="btn-form btn-form-submit" mat-raised-button>Save
+      </button>
+      <button *ngIf="!isAdding"
+              class="btn-form btn-form-submit" mat-raised-button>Update
+      </button>
+      <button [mat-dialog-close] class="btn-form" color="warn" mat-raised-button>Cancel</button>
+    </div>
+  </div>
+</div>

@@ -21,7 +21,8 @@
 
 .accommodation-package-view-data-container{
   @include font-family-roboto-light;
-  font-size: clamp(1.6rem,1vw,2.4rem);
+  //font-size: clamp(1.6rem,1vw,2.4rem);
+  font-size: clamp(1.4rem,1vw,2.4rem);
 }
 
 .header-container{

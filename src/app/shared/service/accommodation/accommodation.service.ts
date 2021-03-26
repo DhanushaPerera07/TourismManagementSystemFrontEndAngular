@@ -85,6 +85,52 @@ export const ACCOMMODATION_DUMMY_DATA: Accommodation[] = [
   }
 ];
 
+const emptyAccommodationPkg: AccommodationPackage =  {
+  id: 0,
+  mealPlan: {
+    id: 0,
+    roomOnly: 0,
+    bedAndBreakfast: 0,
+    halfBoard: 0,
+    fullBoard: 0,
+    allInclusive: 0,
+    remarks: '',
+    accommodationPackageId: 0
+  },
+  roomPlan: {
+    id: 0,
+    singleRoom: 0,
+    doubleRoom: 0,
+    tripleRoom: 0,
+    quadRoom: 0,
+    family: 0,
+    queen: 0,
+    king: 0,
+    twin: 0,
+    suite: 0,
+    remarks: '',
+    accommodationPackageId: 0
+  },
+  childPlan: {
+    id: 0,
+    isChildPlanAvailable: false,
+    cost: 0,
+    remarks: '',
+    accommodationPackageId: 0
+  },
+  guidePlan: {
+    id: 0,
+    isGuideRoomSupplied: false,
+    guideRoom: 0,
+    remarks: '',
+    accommodationPackageId: 0
+  },
+  validPeriod: '',
+  isLatestPackage: false,
+  dateCreated: new Date(Date.now()),
+  accommodationId: 0
+};
+
 @Injectable({
   providedIn: 'root'
 })
@@ -93,6 +139,7 @@ export class AccommodationService {
   accommodationData = ACCOMMODATION_DUMMY_DATA;
   selectedAccommodationData!: Accommodation | undefined;
   // selectedAccommodationPackageData!: AccommodationPackage | undefined;
+  emptyAccommodationPackage: AccommodationPackage = emptyAccommodationPkg;
 
   constructor() {
   }

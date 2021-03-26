@@ -1,23 +1,24 @@
 <div class="accommodation-package-view-data-container container">
   <div class="header-container">
-    <h5>Accommodation Package Details<span *ngIf="accommodationPackage.isLatestPackage" class="badge badge-styles">latest</span></h5>
+    <h5>Accommodation Package Details<span *ngIf="accommodationPackage.isLatestPackage" class="badge badge-styles">latest</span>
+    </h5>
   </div>
 
   <div class="package-details-container">
     <div class="row">
-      <div class="attributes col ">
+      <div class="attributes col-4">
         Package ID
       </div>
-      <div class="col ">
+      <div class="col-8">
         AP00{{ accommodationPackage.id }}
       </div>
     </div>
 
     <div class="row">
-      <div class="attributes col ">
+      <div class="attributes col-4">
         Valid Period
       </div>
-      <div class="col ">
+      <div class="col-8 ">
         {{ accommodationPackage.validPeriod }}
       </div>
     </div>
@@ -34,55 +35,55 @@
 
   <div class="package-details-container">
     <div class="row">
-      <div class="attributes col">
+      <div class="attributes col-4">
         Room Only
       </div>
-      <div class="dollar-symbol col">
+      <div class="dollar-symbol col-8">
         {{ accommodationPackage.mealPlan.roomOnly }} &#x00024;
       </div>
     </div>
 
     <div class="row">
-      <div class="attributes col">
-       Bed and Breakfast
+      <div class="attributes col-4">
+        Bed and Breakfast
       </div>
-      <div class="dollar-symbol col">
+      <div class="dollar-symbol col-8">
         {{ accommodationPackage.mealPlan.bedAndBreakfast }} &#x00024;
       </div>
     </div>
 
     <div class="row">
-      <div class="attributes col">
+      <div class="attributes col-4">
         Half Board
       </div>
-      <div class="dollar-symbol col">
+      <div class="dollar-symbol col-8">
         {{ accommodationPackage.mealPlan.halfBoard }} &#x00024;
       </div>
     </div>
 
     <div class="row">
-      <div class="attributes col">
+      <div class="attributes col-4">
         Full Board
       </div>
-      <div class="dollar-symbol col">
+      <div class="dollar-symbol col-8">
         {{ accommodationPackage.mealPlan.fullBoard }} &#x00024;
       </div>
     </div>
 
     <div class="row">
-      <div class="attributes col">
+      <div class="attributes col-4">
         All Inclusive
       </div>
-      <div class="dollar-symbol col">
+      <div class="dollar-symbol col-8">
         {{ accommodationPackage.mealPlan.allInclusive }} &#x00024;
       </div>
     </div>
 
     <div class="row">
-      <div class="attributes col">
+      <div class="attributes col-4">
         Remarks
       </div>
-      <div class="dollar-symbol col">
+      <div class="dollar-symbol col-8">
         {{ (accommodationPackage.mealPlan.remarks) ? accommodationPackage.mealPlan.remarks : 'None' }}
       </div>
     </div>
@@ -100,92 +101,92 @@
 
   <div class="package-details-container">
     <div class="row">
-      <div class="attributes col">
+      <div class="attributes col-4">
         Single Room
       </div>
-      <div class="dollar-symbol col">
-        {{ (accommodationPackage.roomPlan.singleRoom) ? accommodationPackage.roomPlan.singleRoom + ' &#x00024;' : 'N/A' }}
+      <div class="dollar-symbol col-8">
+        {{ (accommodationPackage.roomPlan.singleRoom && accommodationPackage.roomPlan.singleRoom !== 0) ? accommodationPackage.roomPlan.singleRoom + ' &#x00024;' : 'N/A' }}
       </div>
     </div>
 
     <div class="row">
-      <div class="attributes col">
+      <div class="attributes col-4">
         Double Room
       </div>
-      <div class="dollar-symbol col">
-        {{ (accommodationPackage.roomPlan.doubleRoom) ? accommodationPackage.roomPlan.doubleRoom + ' &#x00024;' : 'N/A' }}
+      <div class="dollar-symbol col-8">
+        {{ (accommodationPackage.roomPlan.doubleRoom && accommodationPackage.roomPlan.doubleRoom !== 0) ? accommodationPackage.roomPlan.doubleRoom + ' &#x00024;' : 'N/A' }}
       </div>
     </div>
 
     <div class="row">
-      <div class="attributes col">
+      <div class="attributes col-4">
         Triple Room
       </div>
-      <div class="dollar-symbol col">
-        {{ (accommodationPackage.roomPlan.tripleRoom) ? accommodationPackage.roomPlan.tripleRoom + ' &#x00024;' : 'N/A' }}
+      <div class="dollar-symbol col-8">
+        {{ (accommodationPackage.roomPlan.tripleRoom && accommodationPackage.roomPlan.tripleRoom !== 0) ? accommodationPackage.roomPlan.tripleRoom + ' &#x00024;' : 'N/A' }}
       </div>
     </div>
 
     <div class="row">
-      <div class="attributes col">
+      <div class="attributes col-4">
         Quad Room
       </div>
-      <div class="dollar-symbol col">
-        {{ (accommodationPackage.roomPlan.quadRoom) ? accommodationPackage.roomPlan.quadRoom + ' &#x00024;' : 'N/A' }}
+      <div class="dollar-symbol col-8">
+        {{ (accommodationPackage.roomPlan.quadRoom && accommodationPackage.roomPlan.quadRoom !==0) ? accommodationPackage.roomPlan.quadRoom + ' &#x00024;' : 'N/A' }}
       </div>
     </div>
 
     <div class="row">
-      <div class="attributes col">
+      <div class="attributes col-4">
         Family
       </div>
-      <div class="dollar-symbol col">
-        {{ (accommodationPackage.roomPlan.family) ? accommodationPackage.roomPlan.family + ' &#x00024;' : 'N/A' }}
+      <div class="dollar-symbol col-8">
+        {{ (accommodationPackage.roomPlan.family && accommodationPackage.roomPlan.family !== 0) ? accommodationPackage.roomPlan.family + ' &#x00024;' : 'N/A' }}
       </div>
     </div>
 
     <div class="row">
-      <div class="attributes col">
+      <div class="attributes col-4">
         Queen
       </div>
-      <div class="dollar-symbol col">
-        {{ (accommodationPackage.roomPlan.queen? accommodationPackage.roomPlan.queen + ' &#x00024;' : 'N/A') }}
+      <div class="dollar-symbol col-8">
+        {{ ((accommodationPackage.roomPlan.queen && accommodationPackage.roomPlan.queen !== 0) ? accommodationPackage.roomPlan.queen + ' &#x00024;' : 'N/A') }}
       </div>
     </div>
 
     <div class="row">
-      <div class="attributes col">
+      <div class="attributes col-4">
         King
       </div>
-      <div class="dollar-symbol col">
-        {{ (accommodationPackage.roomPlan.king) ? accommodationPackage.roomPlan.king + ' &#x00024;' : 'N/A' }}
+      <div class="dollar-symbol col-8">
+        {{ (accommodationPackage.roomPlan.king && accommodationPackage.roomPlan.king !== 0) ? accommodationPackage.roomPlan.king + ' &#x00024;' : 'N/A' }}
       </div>
     </div>
 
     <div class="row">
-      <div class="attributes col">
+      <div class="attributes col-4">
         Twin
       </div>
-      <div class="dollar-symbol col">
-        {{ (accommodationPackage.roomPlan.twin) ? accommodationPackage.roomPlan.twin + ' &#x00024;' : 'N/A' }}
+      <div class="dollar-symbol col-8">
+        {{ (accommodationPackage.roomPlan.twin && accommodationPackage.roomPlan.twin !== 0) ? accommodationPackage.roomPlan.twin + ' &#x00024;' : 'N/A' }}
       </div>
     </div>
 
     <div class="row">
-      <div class="attributes col">
+      <div class="attributes col-4">
         Suite
       </div>
-      <div class="dollar-symbol col">
-        {{ (accommodationPackage.roomPlan.suite) ? accommodationPackage.roomPlan.suite  + ' &#x00024;' : 'N/A' }} &#x00024;
+      <div class="dollar-symbol col-8">
+        {{ (accommodationPackage.roomPlan.suite && accommodationPackage.roomPlan.suite !== 0) ? accommodationPackage.roomPlan.suite + ' &#x00024;' : 'N/A' }}
       </div>
     </div>
 
     <div class="row">
-      <div class="attributes col">
+      <div class="attributes col-4">
         Remarks
       </div>
-      <div class="dollar-symbol col">
-        {{ (accommodationPackage.roomPlan.remarks) ? accommodationPackage.roomPlan.remarks  + ' &#x00024;' : 'None' }}
+      <div class="dollar-symbol col-8">
+        {{ (accommodationPackage.roomPlan.remarks) ? accommodationPackage.roomPlan.remarks + ' &#x00024;' : 'None' }}
       </div>
     </div>
 
@@ -203,28 +204,28 @@
 
   <div class="package-details-container">
     <div class="row">
-      <div class="attributes col">
-       Availability
+      <div class="attributes col-4">
+        Availability
       </div>
-      <div class="col">
+      <div class="col-8">
         {{ (accommodationPackage.childPlan.isChildPlanAvailable) ? 'YES' : 'NO' }}
       </div>
     </div>
 
     <div class="row">
-      <div class="attributes col">
+      <div class="attributes col-4">
         Cost (if available)
       </div>
-      <div class="col">
+      <div class="col-8">
         {{ (accommodationPackage.childPlan.isChildPlanAvailable) ? accommodationPackage.childPlan.cost + '&#x00024;' : 'N/A' }}
       </div>
     </div>
 
     <div class="row">
-      <div class="attributes col">
+      <div class="attributes col-4">
         Remarks
       </div>
-      <div class="dollar-symbol col">
+      <div class="dollar-symbol col-8">
         {{ (accommodationPackage.childPlan.remarks) ? accommodationPackage.childPlan.remarks : 'None'  }}
       </div>
     </div>
@@ -241,28 +242,28 @@
 
   <div class="package-details-container">
     <div class="row">
-      <div class="attributes col">
+      <div class="attributes col-4">
         is Supplied
       </div>
-      <div class="col">
+      <div class="col-8">
         {{ (accommodationPackage.guidePlan.isGuideRoomSupplied) ? 'YES' : 'NO' }}
       </div>
     </div>
 
-    <div class="row" *ngIf="false">
-      <div class="attributes col">
+    <div *ngIf="false" class="row">
+      <div class="attributes col-4">
         Cost (if not available)
       </div>
-      <div class="col">
+      <div class="col-8">
         {{ (!accommodationPackage.guidePlan.isGuideRoomSupplied) ? accommodationPackage.guidePlan.guideRoom + ' &#x00024;' : 'N/A' }}
       </div>
     </div>
 
     <div class="row">
-      <div class="attributes col">
+      <div class="attributes col-4">
         Remarks
       </div>
-      <div class="dollar-symbol col">
+      <div class="dollar-symbol col-8">
         {{ (accommodationPackage.guidePlan.remarks) ? accommodationPackage.guidePlan.remarks : 'None'  }}
       </div>
     </div>
@@ -279,19 +280,19 @@
 
   <div class="package-details-container">
     <div class="row">
-      <div class="attributes col">
+      <div class="attributes col-4">
         Date Created
       </div>
-      <div class="col">
+      <div class="col-8">
         {{ accommodationPackage.dateCreated }}
       </div>
     </div>
 
     <div class="row">
-      <div class="attributes col">
+      <div class="attributes col-4">
         Created By
       </div>
-      <div class="col">
+      <div class="col-8">
         {{ accommodationPackage.createdBy }}
       </div>
     </div>

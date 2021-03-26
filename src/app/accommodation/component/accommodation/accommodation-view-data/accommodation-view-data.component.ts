@@ -1,7 +1,7 @@
 import {AfterViewInit, Component, OnInit} from '@angular/core';
-import {StarRatingEnum} from '../../../shared/enum/star-rating.enum';
-import {AccommodationService} from '../../../shared/service/accommodation/accommodation.service';
-import {Accommodation} from '../../../shared/interface/accommodation';
+import {StarRatingEnum} from '../../../../shared/enum/star-rating.enum';
+import {AccommodationService} from '../../../../shared/service/accommodation/accommodation.service';
+import {Accommodation} from '../../../../shared/interface/accommodation';
 import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({

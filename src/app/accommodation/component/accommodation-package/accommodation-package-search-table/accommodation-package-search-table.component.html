@@ -1,0 +1,29 @@
+<div class="accommodation-package-container container">
+  <h5>Accommodation Packages</h5>
+
+  <div class="accommodation-package-search-table-container">
+    <!-- search-table, header section -->
+    <div class="search_header_section row">
+      <div class="search_header_left col-6">
+        <mat-form-field appearance="outline" class="in_search" floatLabel="never">
+          <input (keyup)="applyFilter($event.target);" matInput placeholder="Search an package">
+        </mat-form-field>
+      </div>
+
+      <div class="search_header_right col-6">
+        <button (click)="openAddEditAccommodationPackage()"
+                class="btn btn-add"
+                type="button">
+          <i class="bi bi-plus-square"></i>
+          Add
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="accommodation-package-table-container container-fluid">
+    <app-accommodation-package-table></app-accommodation-package-table>
+  </div>
+
+</div>

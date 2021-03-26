@@ -1,10 +1,11 @@
 import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
-import {AccommodationService} from '../../../shared/service/accommodation/accommodation.service';
+import {AccommodationService} from '../../../../shared/service/accommodation/accommodation.service';
 import {MatSort} from '@angular/material/sort';
 import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
-import {Accommodation} from '../../../shared/interface/accommodation';
+import {Accommodation} from '../../../../shared/interface/accommodation';
 import {Router} from '@angular/router';
+import {StarRatingEnum} from '../../../../shared/enum/star-rating.enum';
 
 @Component({
   selector: 'app-accommodation-table',
@@ -23,6 +24,7 @@ export class AccommodationTableComponent implements OnInit, AfterViewInit {
   ];
 
   dataSource: MatTableDataSource<Accommodation>;
+  starRatings!: number[];
 
   @ViewChild(MatSort) sort!: MatSort;
 
@@ -65,5 +67,23 @@ export class AccommodationTableComponent implements OnInit, AfterViewInit {
   viewAccommodationRecord(row: any): void {
     console.log(row);
     this.router.navigateByUrl('/accommodation/view/' + row.id);
+  }
+
+
+  setStars(starRating: StarRatingEnum): void {
+    const starRatingNumber = Number.parseInt(starRating.toString(), 10);
+    if (starRatingNumber === -1) {
+      this.starRatings = [];
+    } else {
+      this.starRatings = [];
+      for (let i = 0; i < starRatingNumber; i++) {
+        this.starRatings.push(i);
+      }
+    }
+  }
+
+  getStarRatings(starRating: StarRatingEnum): number[] {
+    this.setStars(starRating);
+    return this.starRatings;
   }
 }

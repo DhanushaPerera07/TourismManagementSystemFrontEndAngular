@@ -27,9 +27,12 @@
  */
 
 export interface MealPlan {
+  id?: number;
   roomOnly?: number;
   bedAndBreakfast?: number;
   halfBoard?: number;
   fullBoard?: number;
+  allInclusive?: number;
   remarks?: string;
+  accommodationPackageId: number;
 }

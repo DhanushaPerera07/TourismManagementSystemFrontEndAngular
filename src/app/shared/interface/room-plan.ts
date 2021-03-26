@@ -27,12 +27,16 @@
  */
 
 export interface RoomPlan {
+  id?: number;
   singleRoom?: number;
   doubleRoom?: number;
   tripleRoom?: number;
   quadRoom?: number;
+  family?: number;
   queen?: number;
   king?: number;
   twin?: number;
+  suite: number;
   remarks?: string;
+  accommodationPackageId: number;
 }

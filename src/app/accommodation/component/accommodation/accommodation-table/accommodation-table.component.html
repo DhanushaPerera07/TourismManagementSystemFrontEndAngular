@@ -22,7 +22,11 @@
     <!-- Star Rating Column -->
     <ng-container matColumnDef="noOfStars">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Star Rating</th>
-      <td class="make-cursor-pointer" mat-cell *matCellDef="let element"> {{element.starRating}} </td>
+      <td class="make-cursor-pointer" mat-cell *matCellDef="let element" >
+<!--        <div *ngFor="let star of getStarRatings(element.starRating)" class="star-rating">-->
+          <i class="bi bi-star-fill star-rating" *ngFor="let star of getStarRatings(element.starRating)"></i>
+<!--        </div>-->
+      </td>
     </ng-container>
 
     <!-- Type of the accommodation Column -->

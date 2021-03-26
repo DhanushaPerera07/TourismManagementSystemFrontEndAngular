@@ -30,15 +30,17 @@ import {Employee} from '../model/employee/employee.model';
 import {MealPlan} from './meal-plan';
 import {RoomPlan} from './room-plan';
 import {GuidePlan} from './guide-plan';
+import {ChildPlan} from './child-plan';
 
 export interface AccommodationPackage {
-  id: number;
-  meanPlan: MealPlan;
+  id: number; // accommodation package ID
+  mealPlan: MealPlan;
   roomPlan: RoomPlan;
-  childPlan: string;
+  childPlan: ChildPlan;
   guidePlan: GuidePlan;
   validPeriod?: string;
   isLatestPackage?: boolean;
   dateCreated?: Date;
   createdBy?: Employee;
+  accommodationId?: number; // accommodation ID
 }

@@ -1,0 +1,302 @@
+<div class="accommodation-package-view-data-container container">
+  <div class="header-container">
+    <h5>Accommodation Package Details<span *ngIf="accommodationPackage.isLatestPackage" class="badge badge-styles">latest</span></h5>
+  </div>
+
+  <div class="package-details-container">
+    <div class="row">
+      <div class="attributes col ">
+        Package ID
+      </div>
+      <div class="col ">
+        AP00{{ accommodationPackage.id }}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="attributes col ">
+        Valid Period
+      </div>
+      <div class="col ">
+        {{ accommodationPackage.validPeriod }}
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- meal plan -->
+<div class="accommodation-package-view-data-container container">
+  <div class="header-container">
+    <h5>Meal Plan</h5>
+  </div>
+
+  <div class="package-details-container">
+    <div class="row">
+      <div class="attributes col">
+        Room Only
+      </div>
+      <div class="dollar-symbol col">
+        {{ accommodationPackage.mealPlan.roomOnly }} &#x00024;
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="attributes col">
+       Bed and Breakfast
+      </div>
+      <div class="dollar-symbol col">
+        {{ accommodationPackage.mealPlan.bedAndBreakfast }} &#x00024;
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="attributes col">
+        Half Board
+      </div>
+      <div class="dollar-symbol col">
+        {{ accommodationPackage.mealPlan.halfBoard }} &#x00024;
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="attributes col">
+        Full Board
+      </div>
+      <div class="dollar-symbol col">
+        {{ accommodationPackage.mealPlan.fullBoard }} &#x00024;
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="attributes col">
+        All Inclusive
+      </div>
+      <div class="dollar-symbol col">
+        {{ accommodationPackage.mealPlan.allInclusive }} &#x00024;
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="attributes col">
+        Remarks
+      </div>
+      <div class="dollar-symbol col">
+        {{ (accommodationPackage.mealPlan.remarks) ? accommodationPackage.mealPlan.remarks : 'None' }}
+      </div>
+    </div>
+
+
+  </div>
+
+</div>
+
+<!-- room plan -->
+<div class="accommodation-package-view-data-container container">
+  <div class="header-container">
+    <h5>Room Plan</h5>
+  </div>
+
+  <div class="package-details-container">
+    <div class="row">
+      <div class="attributes col">
+        Single Room
+      </div>
+      <div class="dollar-symbol col">
+        {{ (accommodationPackage.roomPlan.singleRoom) ? accommodationPackage.roomPlan.singleRoom + ' &#x00024;' : 'N/A' }}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="attributes col">
+        Double Room
+      </div>
+      <div class="dollar-symbol col">
+        {{ (accommodationPackage.roomPlan.doubleRoom) ? accommodationPackage.roomPlan.doubleRoom + ' &#x00024;' : 'N/A' }}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="attributes col">
+        Triple Room
+      </div>
+      <div class="dollar-symbol col">
+        {{ (accommodationPackage.roomPlan.tripleRoom) ? accommodationPackage.roomPlan.tripleRoom + ' &#x00024;' : 'N/A' }}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="attributes col">
+        Quad Room
+      </div>
+      <div class="dollar-symbol col">
+        {{ (accommodationPackage.roomPlan.quadRoom) ? accommodationPackage.roomPlan.quadRoom + ' &#x00024;' : 'N/A' }}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="attributes col">
+        Family
+      </div>
+      <div class="dollar-symbol col">
+        {{ (accommodationPackage.roomPlan.family) ? accommodationPackage.roomPlan.family + ' &#x00024;' : 'N/A' }}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="attributes col">
+        Queen
+      </div>
+      <div class="dollar-symbol col">
+        {{ (accommodationPackage.roomPlan.queen? accommodationPackage.roomPlan.queen + ' &#x00024;' : 'N/A') }}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="attributes col">
+        King
+      </div>
+      <div class="dollar-symbol col">
+        {{ (accommodationPackage.roomPlan.king) ? accommodationPackage.roomPlan.king + ' &#x00024;' : 'N/A' }}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="attributes col">
+        Twin
+      </div>
+      <div class="dollar-symbol col">
+        {{ (accommodationPackage.roomPlan.twin) ? accommodationPackage.roomPlan.twin + ' &#x00024;' : 'N/A' }}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="attributes col">
+        Suite
+      </div>
+      <div class="dollar-symbol col">
+        {{ (accommodationPackage.roomPlan.suite) ? accommodationPackage.roomPlan.suite  + ' &#x00024;' : 'N/A' }} &#x00024;
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="attributes col">
+        Remarks
+      </div>
+      <div class="dollar-symbol col">
+        {{ (accommodationPackage.roomPlan.remarks) ? accommodationPackage.roomPlan.remarks  + ' &#x00024;' : 'None' }}
+      </div>
+    </div>
+
+
+  </div>
+
+</div>
+
+
+<!-- child plan -->
+<div class="accommodation-package-view-data-container container">
+  <div class="header-container">
+    <h5>Child Plan</h5>
+  </div>
+
+  <div class="package-details-container">
+    <div class="row">
+      <div class="attributes col">
+       Availability
+      </div>
+      <div class="col">
+        {{ (accommodationPackage.childPlan.isChildPlanAvailable) ? 'YES' : 'NO' }}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="attributes col">
+        Cost (if available)
+      </div>
+      <div class="col">
+        {{ (accommodationPackage.childPlan.isChildPlanAvailable) ? accommodationPackage.childPlan.cost + '&#x00024;' : 'N/A' }}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="attributes col">
+        Remarks
+      </div>
+      <div class="dollar-symbol col">
+        {{ (accommodationPackage.childPlan.remarks) ? accommodationPackage.childPlan.remarks : 'None'  }}
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- Guide plan -->
+<div class="accommodation-package-view-data-container container">
+  <div class="header-container">
+    <h5>Guide Plan</h5>
+  </div>
+
+  <div class="package-details-container">
+    <div class="row">
+      <div class="attributes col">
+        is Supplied
+      </div>
+      <div class="col">
+        {{ (accommodationPackage.guidePlan.isGuideRoomSupplied) ? 'YES' : 'NO' }}
+      </div>
+    </div>
+
+    <div class="row" *ngIf="false">
+      <div class="attributes col">
+        Cost (if not available)
+      </div>
+      <div class="col">
+        {{ (!accommodationPackage.guidePlan.isGuideRoomSupplied) ? accommodationPackage.guidePlan.guideRoom + ' &#x00024;' : 'N/A' }}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="attributes col">
+        Remarks
+      </div>
+      <div class="dollar-symbol col">
+        {{ (accommodationPackage.guidePlan.remarks) ? accommodationPackage.guidePlan.remarks : 'None'  }}
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- additional details -->
+<div class="accommodation-package-view-data-container container">
+  <div class="header-container">
+    <h5>Additional Details</h5>
+  </div>
+
+  <div class="package-details-container">
+    <div class="row">
+      <div class="attributes col">
+        Date Created
+      </div>
+      <div class="col">
+        {{ accommodationPackage.dateCreated }}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="attributes col">
+        Created By
+      </div>
+      <div class="col">
+        {{ accommodationPackage.createdBy }}
+      </div>
+    </div>
+
+  </div>
+
+</div>
+

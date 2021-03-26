@@ -40,11 +40,15 @@ import {ToEmployeeIdPipe} from './pipe/to-employee-id.pipe';
 import {AccommodationComponent} from './accommodation/accommodation.component';
 import {ManageAccommodationComponent} from './accommodation/main/manage-accommodation/manage-accommodation.component';
 import {AddEditAccommodationComponent} from './accommodation/main/add-edit-accommodation/add-edit-accommodation.component';
-import {AccommodationSearchTableComponent} from './accommodation/component/accommodation-search-table/accommodation-search-table.component';
-import {AccommodationTableComponent} from './accommodation/component/accommodation-table/accommodation-table.component';
+import {AccommodationSearchTableComponent} from './accommodation/component/accommodation/accommodation-search-table/accommodation-search-table.component';
+import {AccommodationTableComponent} from './accommodation/component/accommodation/accommodation-table/accommodation-table.component';
 import {NavigationComponent} from './main-nav/navigation/navigation.component';
 import { ViewAccommodationComponent } from './accommodation/main/view-accommodation/view-accommodation.component';
-import { AccommodationViewDataComponent } from './accommodation/component/accommodation-view-data/accommodation-view-data.component';
+import { AccommodationViewDataComponent } from './accommodation/component/accommodation/accommodation-view-data/accommodation-view-data.component';
+import { AccommodationPackageSearchTableComponent } from './accommodation/component/accommodation-package/accommodation-package-search-table/accommodation-package-search-table.component';
+import { AccommodationPackageTableComponent } from './accommodation/component/accommodation-package/accommodation-package-table/accommodation-package-table.component';
+import { AccommodationPackageViewDataComponent } from './accommodation/component/accommodation-package/accommodation-package-view-data/accommodation-package-view-data.component';
+import {MatTabsModule} from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -75,7 +79,10 @@ import { AccommodationViewDataComponent } from './accommodation/component/accomm
     AccommodationTableComponent,
     NavigationComponent,
     ViewAccommodationComponent,
-    AccommodationViewDataComponent
+    AccommodationViewDataComponent,
+    AccommodationPackageSearchTableComponent,
+    AccommodationPackageTableComponent,
+    AccommodationPackageViewDataComponent
   ],
   imports: [
     BrowserModule,
@@ -95,6 +102,7 @@ import { AccommodationViewDataComponent } from './accommodation/component/accomm
     MatIconModule,
     MatDialogModule,
     MatExpansionModule,
+    MatTabsModule,
     BreadcrumbModule  // breadcrumbs
   ],
   providers: [],

@@ -1,0 +1,86 @@
+@mixin table-header-styles {
+  font-family: 'Roboto Medium', sans-serif;
+  background-color: #0c9463;
+  @include table-header-font-and-arrow-color;
+  font-size: clamp(1.6rem,1.2vw,2.4rem);
+  text-transform: capitalize;
+}
+
+@mixin table-header-font-and-arrow-color{
+  color: white;
+}
+
+@mixin table-row-styles {
+  font-family: 'Roboto Light', sans-serif;
+  font-size: clamp(1.6rem,1.2vw,2.4rem);
+}
+
+.accommodation-table-container{
+  //@include font-family-roboto-light;
+}
+
+.customer_section_title> p{
+  font-family: 'Roboto Light', sans-serif;
+  font-size: clamp(1.6rem,1vw,2.4rem);
+}
+
+
+@media screen and (max-width: 992px) {
+  .accommodation-table-container{
+    overflow: scroll;
+  }
+}
+
+table{
+  width: 100%;
+}
+
+.accommodation_table_options > *{
+  font-size: clamp(1.6rem,3vw,2rem);
+  margin: 0 1rem;
+}
+
+i {
+  cursor: pointer;
+}
+
+
+
+.star-rating{
+  font-size: clamp(1.6rem,1.2vw,2.4rem);
+  padding: 0 0.5rem;
+  color: #ffbe0f;
+}
+
+.icon-edit{
+  color: #4267B2;
+}
+
+.icon-delete{
+  color: crimson;
+}
+
+
+th{
+  @include table-header-styles;
+}
+
+::ng-deep .mat-sort-header-arrow {
+  @include table-header-font-and-arrow-color;
+}
+
+.make-cursor-pointer{
+  cursor: pointer;
+}
+
+tr{
+  @include table-row-styles;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.make-text-align{
+  text-align: center;
+}

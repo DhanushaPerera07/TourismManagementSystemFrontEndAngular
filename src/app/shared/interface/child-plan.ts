@@ -27,7 +27,9 @@
  */
 
 export interface ChildPlan {
+  id?: number;
   isChildPlanAvailable: boolean;
   cost: number;
-  remarks: string;
+  remarks?: string;
+  accommodationPackageId: number;
 }

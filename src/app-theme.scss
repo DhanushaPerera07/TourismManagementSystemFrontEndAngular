@@ -1,0 +1,88 @@
+/**
+ * MIT License
+ *
+ * Copyright (c) 2021 Dhanusha Perera
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+/**
+ * @author : Dhanusha Perera
+ * @since : 25/03/2021
+ */
+
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+$app-green: (
+  50: #e8f5e9,
+  100: #c8e6c9,
+  200: #9acd32,
+  300: #9acd32,
+  400: #66bb6a,
+  500: #9acd32,
+  600: #9acd32,
+  700: #9acd32,
+  800: #9acd32,
+  900: #9acd32,
+  A100: #9acd32,
+  A200: #9acd32,
+  A400: #9acd32,
+  A700: #9acd32,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $dark-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $dark-primary-text,
+    A400: $dark-primary-text,
+    A700: $dark-primary-text,
+  )
+);
+
+$app-theme-primary: mat-palette($app-green);
+$app-theme-accent: mat-palette($mat-pink,A200, A100,A200);
+$app-theme-warn: mat-palette($mat-red);
+
+$app-theme : mat-light-theme($app-theme-primary, $app-theme-accent, $app-theme-warn);
+
+@include angular-material-theme($app-theme);
+
+@mixin custom-tabs-theme() {
+  .mat-tab-label-active  {
+    border-bottom: 2px solid yellowgreen;
+  }
+}
+
+@mixin app-styles() {
+
+  .mat-paginator  {
+    background-color: white;
+  }
+}
+
+@include custom-tabs-theme();
+//@include app-styles();

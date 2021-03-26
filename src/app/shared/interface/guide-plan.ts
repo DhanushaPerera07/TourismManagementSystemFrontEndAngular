@@ -27,7 +27,9 @@
  */
 
 export interface GuidePlan {
+  id?: number;
   isGuideRoomSupplied: boolean;
   guideRoom: number;
-  remarks: string;
+  remarks?: string;
+  accommodationPackageId: number;
 }

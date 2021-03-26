@@ -3,6 +3,17 @@
 
 <div class="view-accommodation-container">
   <div class="container">
-    <app-accommodation-view-data></app-accommodation-view-data>
+    <mat-tab-group mat-align-tabs="start" animationDuration="0ms">
+      <mat-tab label="Basic Information">
+        <app-accommodation-view-data></app-accommodation-view-data>
+      </mat-tab>
+      <mat-tab label="Accommodation Packages">
+        <app-accommodation-package-search-table></app-accommodation-package-search-table>
+      </mat-tab>
+    </mat-tab-group>
+
+<!--    <app-accommodation-view-data></app-accommodation-view-data>-->
+<!--    <br>-->
+<!--    <app-accommodation-package-search-table></app-accommodation-package-search-table>-->
   </div>
 </div>

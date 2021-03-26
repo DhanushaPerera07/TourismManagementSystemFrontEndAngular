@@ -1,0 +1,10 @@
+
+@mixin custom-tabs-theme() {
+  .mat-tab-label-active  {
+    border-color: orange;
+  }
+}
+
+.tab-styles{
+  @include custom-tabs-theme;
+}

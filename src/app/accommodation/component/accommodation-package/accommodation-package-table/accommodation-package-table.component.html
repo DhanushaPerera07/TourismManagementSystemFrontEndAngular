@@ -1,0 +1,104 @@
+<div class="accommodation-package-table-container mat-elevation-z8">
+  <table [dataSource]="dataSource" mat-table  matSort>
+
+    <!-- Accommodation ID Column -->
+    <ng-container matColumnDef="packageID">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Package ID</th>
+      <td class="make-cursor-pointer" mat-cell *matCellDef="let element"> AP00{{element.id}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="validPeriod">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Valid Period</th>
+      <td class="make-cursor-pointer" mat-cell *matCellDef="let element"> {{ element.validPeriod }} </td>
+    </ng-container>
+
+    <!-- Situated in Column -->
+    <ng-container matColumnDef="roomOnly">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>RO</th>
+      <td class="make-cursor-pointer" mat-cell *matCellDef="let element"> {{element.mealPlan.roomOnly}} </td>
+    </ng-container>
+
+    <!-- Star Rating Column -->
+    <ng-container matColumnDef="bedAndBreakfast">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>BB</th>
+      <td class="make-cursor-pointer" mat-cell *matCellDef="let element"> {{element.mealPlan.bedAndBreakfast}} </td>
+    </ng-container>
+
+    <!-- Type of the accommodation Column -->
+    <ng-container matColumnDef="halfBoard">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>HB</th>
+      <td class="make-cursor-pointer" mat-cell *matCellDef="let element"> {{element.mealPlan.halfBoard}} </td>
+    </ng-container>
+
+    <!-- Full board (meal plan) Column -->
+    <ng-container matColumnDef="fullBoard">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>FB</th>
+      <td class="make-cursor-pointer" mat-cell *matCellDef="let element"> {{element.mealPlan.fullBoard}} </td>
+    </ng-container>
+
+    <!-- All inclusive (meal plan) Column -->
+    <ng-container matColumnDef="allInclusive">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>AL</th>
+      <td class="make-cursor-pointer" mat-cell *matCellDef="let element"> {{element.mealPlan.allInclusive}} </td>
+    </ng-container>
+
+    <!-- Single (room plan) Column -->
+    <ng-container matColumnDef="singleRoom">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Single</th>
+      <td class="make-cursor-pointer" mat-cell *matCellDef="let element"> {{element.roomPlan.singleRoom}} </td>
+    </ng-container>
+
+    <!-- Double (room plan) Column -->
+    <ng-container matColumnDef="doubleRoom">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Double</th>
+      <td class="make-cursor-pointer" mat-cell *matCellDef="let element"> {{element.roomPlan.doubleRoom}} </td>
+    </ng-container>
+
+    <!-- Triple (room plan) Column -->
+    <ng-container matColumnDef="tripleRoom">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Triple</th>
+      <td class="make-cursor-pointer" mat-cell *matCellDef="let element"> {{element.roomPlan.tripleRoom}} </td>
+    </ng-container>
+
+    <!-- Quad (room plan) Column -->
+    <ng-container matColumnDef="quadRoom">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Quad</th>
+      <td class="make-cursor-pointer" mat-cell *matCellDef="let element"> {{element.roomPlan.quadRoom}} </td>
+    </ng-container>
+
+    <!-- Quad (room plan) Column -->
+    <ng-container matColumnDef="family">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Family</th>
+      <td class="make-cursor-pointer" mat-cell *matCellDef="let element"> {{element.roomPlan.family}} </td>
+    </ng-container>
+
+
+    <!-- suite (room plan) Column -->
+    <ng-container matColumnDef="suite">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Suite</th>
+      <td class="make-cursor-pointer" mat-cell *matCellDef="let element"> {{element.roomPlan.suite}} </td>
+    </ng-container>
+
+
+    <!-- Options column -->
+    <ng-container matColumnDef="options">
+      <th *matHeaderCellDef mat-header-cell>Options</th>
+      <td *matCellDef="let element" mat-cell>
+        <div (click)="$event.stopPropagation();" class="accommodation_package_table_options">
+          <i (click)="editRecord(element);" class="bi bi-pencil-square icon-size icon-edit"></i>
+          <i (click)="deleteRecord(element.id);" class="bi bi-trash icon-size icon-delete"></i>
+        </div>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+    <tr (click)="viewAccommodationRecord(row);" mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    <!-- Row shown when there is no matching data. -->
+    <tr class="mat-row" *matNoDataRow>
+      <td class="mat-cell make-text-align" [colSpan]="displayedColumns.length">No records found</td>
+    </tr>
+  </table>
+  <mat-paginator [pageSize]="5" [pageSizeOptions]="[5,10,20,50,100]" showFirstLastButtons></mat-paginator>
+</div>

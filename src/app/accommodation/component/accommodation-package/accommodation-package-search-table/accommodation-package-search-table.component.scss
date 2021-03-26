@@ -1,0 +1,61 @@
+// =====================================================================
+// Reusable styles - start
+// =====================================================================
+
+@mixin font-family-roboto-light {
+  font-family: 'Roboto Light', sans-serif;
+}
+
+@mixin add-button-styles{
+  color: white;
+  background-color: #0c9463;
+  font-size : clamp(1.6rem,1vw,2rem);
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+// =====================================================================
+// Reusable styles - end
+// =====================================================================
+
+
+.accommodation-package-container{
+  @include font-family-roboto-light;
+  padding-top: 3rem;
+  //padding: 2rem 0;
+}
+
+
+h5{
+  font-size: clamp(1.6rem,1.5vw,2.4rem);
+  font-weight: bold;
+}
+
+.accommodation-package-search-table-container{
+  padding: 2rem 0;
+}
+
+.accommodation-package-table-container{
+  padding: 2rem 0;
+}
+
+.search_header_right{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+
+mat-form-field{
+  width: 75%;
+  font-size : clamp(1.6rem,1vw,2rem);
+}
+
+
+.btn-add{
+  @include add-button-styles;
+}
+
+.btn-search {
+  margin: 0 0.5rem;
+}

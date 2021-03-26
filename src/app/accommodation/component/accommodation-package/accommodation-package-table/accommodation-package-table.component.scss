@@ -1,6 +1,6 @@
 @mixin table-header-styles {
   font-family: 'Roboto Medium', sans-serif;
-  background-color: #0c9463;
+  background-color: yellowgreen;
   @include table-header-font-and-arrow-color;
   font-size: clamp(1.6rem,1.2vw,2.4rem);
   text-transform: capitalize;
@@ -35,7 +35,7 @@ table{
   width: 100%;
 }
 
-.accommodation_table_options > *{
+.accommodation_package_table_options > *{
   font-size: clamp(1.6rem,3vw,2rem);
   margin: 0 1rem;
 }

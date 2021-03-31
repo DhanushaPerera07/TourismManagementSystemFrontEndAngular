@@ -58,6 +58,7 @@ export class AccommodationTableComponent implements OnInit, AfterViewInit {
 
   editRecord(element: any): void {
     console.log(element);
+    this.router.navigateByUrl('/accommodation/edit/' + element.id);
   }
 
   deleteRecord(id: any): void {

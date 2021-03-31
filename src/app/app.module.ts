@@ -51,6 +51,7 @@ import { AccommodationPackageViewDataComponent } from './accommodation/component
 import {MatTabsModule} from '@angular/material/tabs';
 import { AddEditAccommodationPackageComponent } from './accommodation/component/accommodation-package/add-edit-accommodation-package/add-edit-accommodation-package.component';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -107,6 +108,7 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     MatExpansionModule,
     MatTabsModule,
     MatSlideToggleModule,
+    MatSelectModule,
     BreadcrumbModule  // breadcrumbs
   ],
   providers: [],

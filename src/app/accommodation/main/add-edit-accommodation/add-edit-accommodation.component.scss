@@ -1,5 +1,60 @@
-.box{
-  width: 600px;
-  height: 600px;
-  background-color: #dc3545;
+.add-edit-accommodation-container{
+  padding-top: 2rem;
+  padding-bottom: 6rem;
+}
+
+.divider{
+  margin-bottom: 1.5rem;
+  border-top-color: yellowgreen;
+}
+
+
+mat-form-field{
+  width: 100%;
+}
+
+textarea {
+  min-height: 15vh;
+}
+
+.form-button-section{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-form-submit{
+  background-color: #5cb85c;
+  color: white;
+}
+
+.btn-form{
+  min-width: 60px;
+  padding: 0 2rem;
+  margin: 0 1rem;
+}
+
+.textfield-mat-form-field {
+  width: 100%;
+}
+
+h5{
+  font-family: "Roboto Light", sans-serif;
+  font-size: clamp(1.6rem,1.2vw,2.4rem);
+  font-weight: bold;
+}
+
+
+mat-label{
+  font-family: "Roboto", sans-serif;
+  font-size: clamp(1.4rem,1vw,2.4rem);
+
+}
+
+input, textarea, mat-select{
+  font-family: "Roboto Light", sans-serif;
+  font-size: clamp(1.4rem,1vw,2.4rem);
+}
+
+.add-edit-accommodation-data-container{
+  padding: 2rem 0;
 }

@@ -1,6 +1,8 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {CustomerTableComponent} from '../../../../customer/component/customer-table/customer-table.component';
 import {AccommodationTableComponent} from '../accommodation-table/accommodation-table.component';
+import {Router} from '@angular/router';
+import {AccommodationService} from '../../../../shared/service/accommodation/accommodation.service';
 
 @Component({
   selector: 'app-accommodation-search-table',
@@ -13,7 +15,7 @@ export class AccommodationSearchTableComponent implements OnInit {
   @ViewChild(AccommodationTableComponent)
   appAccommodationTable!: AccommodationTableComponent;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     if ((document.getElementsByClassName('mat-form-field-wrapper')[0])) {
@@ -27,6 +29,6 @@ export class AccommodationSearchTableComponent implements OnInit {
   }
 
   redirectToAddAccommodation(): void {
-
+    this.router.navigateByUrl('/accommodation/add');
   }
 }

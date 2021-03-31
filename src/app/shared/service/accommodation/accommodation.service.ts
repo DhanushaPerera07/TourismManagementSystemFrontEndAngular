@@ -85,6 +85,23 @@ export const ACCOMMODATION_DUMMY_DATA: Accommodation[] = [
   }
 ];
 
+
+const emptyAccommodation: Accommodation = {
+  id: 0,
+  name: '',
+  accommodationPackage: [],
+  address: '',
+  contact: '',
+  email: '',
+  remarks: '',
+  situatedIn: '',
+  specialDetails: '',
+  starRating: StarRatingEnum.UNKNOWN,
+  type: '',
+  website: ''
+
+};
+
 const emptyAccommodationPkg: AccommodationPackage =  {
   id: 0,
   mealPlan: {
@@ -139,6 +156,7 @@ export class AccommodationService {
   accommodationData = ACCOMMODATION_DUMMY_DATA;
   selectedAccommodationData!: Accommodation | undefined;
   // selectedAccommodationPackageData!: AccommodationPackage | undefined;
+  emptyAccommodation: Accommodation = emptyAccommodation;
   emptyAccommodationPackage: AccommodationPackage = emptyAccommodationPkg;
 
   constructor() {

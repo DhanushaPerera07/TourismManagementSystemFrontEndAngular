@@ -1,5 +1,195 @@
 <app-main-nav></app-main-nav>
 <app-breadcrumb></app-breadcrumb>
-<p>add-edit-accommodation works!</p>
+
+<div class="add-edit-accommodation-container container">
+  <div class="header-container">
+    <h5 *ngIf="isAdding">Add Accommodation</h5>
+    <h5 *ngIf="!isAdding">Edit Accommodation</h5>
+  </div>
+  <mat-divider class="divider"></mat-divider>
+
+  <div class="add-edit-accommodation-data-container">
+    <div class="row" *ngIf="!isAdding">
+      <div class="col">
+        <mat-form-field appearance="outline">
+          <mat-label>Accommodation ID&nbsp;</mat-label>
+          <input
+            #accommodationID
+            id="id_accommodationID"
+            class="accommodationID"
+            name="accommodationID"
+            [(ngModel)]="selectedAccommodation.id"
+            matInput
+            placeholder="Accommodation ID"
+            disabled>
+        </mat-form-field>
+      </div>
+      <div class="col">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <mat-form-field appearance="outline">
+          <mat-label>Accommodation Name&nbsp;</mat-label>
+          <input
+            #accommodationName
+            id="id_accommodationName"
+            class="accommodationName"
+            name="accommodationName"
+            [(ngModel)]="selectedAccommodation.name"
+            matInput
+            placeholder="Accommodation Name">
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-form-field appearance="outline">
+          <mat-label>Situated In&nbsp;</mat-label>
+          <input
+            #situatedIn
+            id="id_situatedIn"
+            class="situatedIn"
+            name="situatedIn"
+            [(ngModel)]="selectedAccommodation.situatedIn"
+            matInput
+            placeholder="Situated In">
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <mat-form-field appearance="outline">
+          <mat-label>Star Ratings&nbsp;</mat-label>
+          <mat-select
+            #starRating
+            id="id_starRating"
+            class="starRating"
+            name="starRating"
+          [(value)]="selectedAccommodation.starRating">
+            <mat-option [value]="-1">Unknown</mat-option>
+            <mat-option [value]="0">No Stars</mat-option>
+            <mat-option [value]="1">1 Star</mat-option>
+            <mat-option [value]="2">2 Stars</mat-option>
+            <mat-option [value]="3">3 Stars</mat-option>
+            <mat-option [value]="4">4 Stars</mat-option>
+            <mat-option [value]="5">5 Stars</mat-option>
+            <mat-option [value]="6">6 Stars</mat-option>
+            <mat-option [value]="7">7 Stars</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-form-field appearance="outline">
+          <mat-label>Type&nbsp;</mat-label>
+          <input
+            #type
+            id="id_type"
+            class="type"
+            name="type"
+            [(ngModel)]="selectedAccommodation.type"
+            matInput
+            placeholder="Type of the accommodation">
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <mat-form-field appearance="outline">
+          <mat-label>Contact&nbsp;</mat-label>
+          <input
+            #contact
+            id="id_contact"
+            class="contact"
+            name="contact"
+            [(ngModel)]="selectedAccommodation.contact"
+            matInput
+            placeholder="Contact">
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-form-field appearance="outline">
+          <mat-label>Email&nbsp;</mat-label>
+          <input
+            #type
+            id="id_email"
+            class="email"
+            name="email"
+            [(ngModel)]="selectedAccommodation.email"
+            matInput
+            placeholder="Email">
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <mat-form-field appearance="outline">
+          <mat-label>Website&nbsp;</mat-label>
+          <textarea
+            #website
+            id="id_website"
+            class="website"
+            name="website"
+            [(ngModel)]="selectedAccommodation.website"
+            matInput
+            placeholder="Website"></textarea>
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-form-field appearance="outline">
+          <mat-label>Address&nbsp;</mat-label>
+          <textarea
+            #address
+            id="id_address"
+            class="address"
+            name="address"
+            [(ngModel)]="selectedAccommodation.address"
+            matInput
+            placeholder="Address"></textarea>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <!-- special details -->
+    <div class="row">
+      <div class="col">
+        <mat-form-field appearance="outline">
+          <mat-label>Special Details&nbsp;</mat-label>
+          <textarea
+            #specialDetails
+            id="id_specialDetails"
+            class="specialDetails"
+            name="specialDetails"
+            [(ngModel)]="selectedAccommodation.specialDetails"
+            matInput
+            placeholder="Special Details"></textarea>
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-form-field appearance="outline">
+          <mat-label>Remarks&nbsp;</mat-label>
+          <textarea
+            #remarks
+            id="id_remarks"
+            class="remarks"
+            name="remarks"
+            [(ngModel)]="selectedAccommodation.remarks"
+            matInput
+            placeholder="Remarks related to accommodation"></textarea>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="form-button-section">
+      <button *ngIf="isAdding" class="btn-form btn-form-submit" mat-raised-button>Save</button>
+      <button *ngIf="!isAdding" class="btn-form btn-form-submit" mat-raised-button>Update</button>
+      <button (click)="redirectToAccommodationPage()" class="btn-form" color="warn" mat-raised-button>Cancel</button>
+    </div>
+
+  </div>
+
+</div>
 
 

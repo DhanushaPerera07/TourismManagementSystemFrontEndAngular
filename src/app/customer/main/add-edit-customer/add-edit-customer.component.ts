@@ -1,8 +1,9 @@
 import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {CustomerService} from '../../../shared/service/customer.service';
 import {Customer} from '../../../shared/interface/customer';
 import {Employee} from '../../../shared/model/employee/employee.model';
+import {isNumeric} from 'rxjs/internal-compatibility';
 
 @Component({
   selector: 'app-add-edit-customer',
@@ -19,22 +20,14 @@ export class AddEditCustomerComponent implements OnInit
   @ViewChild('name')
   nameInputElement!: ElementRef;
 
-  customer: Customer = {
-    id: 0,
-    name: '',
-    nationality: '',
-    passportNo: '',
-    email: '',
-    phone: '',
-    countryCallingCode: '',
-    country: '',
-    description: '',
-    additionalNotes: '',
-    addedDate: new Date(Date.now()),
-    addedBy: new Employee(0, '')
-  };
+  /* this variable holds the customer related values.
+  * when adding a new customer: holds a default values of customer.
+  * when updating a customer: holds existing customer related info
+  */
+  customer!: Customer;
 
   constructor(private router: Router,
+              private activatedRoute: ActivatedRoute,
               private customerService: CustomerService) {
   }
 
@@ -44,13 +37,27 @@ export class AddEditCustomerComponent implements OnInit
 
   ngOnInit(): void {
     if (this.getIsAddingACustomer()) {
-      this.initializeCustomerObject();
-      // (this.nameInputElement.nativeElement as HTMLInputElement).focus();
+      /* adding a new customer happens here */
+      this.customer = this.customerService.emptyCustomer;
 
     } else {
-      if (this.customerService.customerToBeEdited) {
-        this.customer = this.customerService.customerToBeEdited;
-      }
+      /* update existing customer is happening here */
+      this.activatedRoute.params.subscribe(value => {
+        const id = Number.parseInt(value.id, 10);
+        if (id && Number.isInteger(id)){
+          const result = this.customerService.findCustomerById(id);
+          if (result){
+            /* customer is found for that given ID*/
+            this.customer = result;
+          } else {
+            /* customer is NOT found for that given ID */
+            this.router.navigateByUrl('/customer');
+          }
+        }
+      });
+      // if (this.customerService.customerToBeEdited) {
+      //   this.customer = this.customerService.customerToBeEdited;
+      // }
     }
 
     setTimeout(() => {
@@ -66,22 +73,5 @@ export class AddEditCustomerComponent implements OnInit
     if (confirm('Are you sure you want to cancel? Click OK to Cancel.')) {
       this.router.navigateByUrl('/customer');
     }
-  }
-
-  initializeCustomerObject(): void {
-    this.customer = {
-      id: 0,
-      name: '',
-      nationality: '',
-      passportNo: '',
-      email: '',
-      phone: '',
-      countryCallingCode: '',
-      country: '',
-      description: '',
-      additionalNotes: '',
-      addedDate: new Date(Date.now()),
-      addedBy: new Employee(0, '')
-    };
   }
 }

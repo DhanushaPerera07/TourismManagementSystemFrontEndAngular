@@ -34,6 +34,22 @@ const CUSTOMER_DATA: Customer[] = [
   }
 ];
 
+/* this constant is used to initialize customer objectwith a default value. */
+const emptyCustomer: Customer = {
+  id: 0,
+  name: '',
+  nationality: '',
+  passportNo: '',
+  email: '',
+  phone: '',
+  countryCallingCode: '',
+  country: '',
+  description: '',
+  additionalNotes: '',
+  addedDate: new Date(Date.now()),
+  addedBy: new Employee(0, '')
+};
+
 @Injectable({
   providedIn: 'root'
 })
@@ -47,6 +63,23 @@ export class CustomerService {
 
   customerList: Customer[] = CUSTOMER_DATA;
 
+  emptyCustomer = emptyCustomer;
+
   constructor() {
+  }
+
+  /** This method will find the customer by ID.
+   * @returns customer if found any,
+   * otherwise, it returns undefined.
+   */
+  findCustomerById(id: number): Customer | undefined {
+    const result = this.customerList.find(value => value.id === id);
+    this.customerToBeEdited = this.emptyCustomer;
+    if (result) {
+      this.customerToBeEdited = result;
+      return this.customerToBeEdited;
+    } else {
+      return undefined;
+    }
   }
 }

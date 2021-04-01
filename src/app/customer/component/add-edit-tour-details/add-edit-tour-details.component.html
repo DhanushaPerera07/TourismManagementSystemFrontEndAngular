@@ -1,5 +1,5 @@
 <div class="add-edit-tour-details-container container">
-  <button mat-dialog-close class="btn-close" mat-button>
+  <button class="btn-close" mat-button mat-dialog-close>
     <mat-icon>close</mat-icon>
   </button>
   <div class="header-container">
@@ -9,19 +9,19 @@
   <mat-divider class="divider"></mat-divider>
 
   <div class="add-edit-tour-details-data-container">
-    <div class="row" *ngIf="!isAdding">
+    <div *ngIf="!isAdding" class="row">
       <div class="col">
         <mat-form-field appearance="outline">
           <mat-label>Tour Detail ID&nbsp;</mat-label>
           <input
             #tourDetailID
-            id="id_tourDetailID"
-            class="tourDetailID"
-            name="tourDetailID"
             [(ngModel)]="selectedTourDetail.id"
+            class="tourDetailID"
+            disabled
+            id="id_tourDetailID"
             matInput
-            placeholder="Tour Detail ID"
-            disabled>
+            name="tourDetailID"
+            placeholder="Tour Detail ID">
         </mat-form-field>
       </div>
       <div class="col">
@@ -34,11 +34,11 @@
           <mat-label>Arrival Date&nbsp;</mat-label>
           <input
             #arrivalDate
-            id="id_arrivalDate"
-            class="arrivalDate"
-            name="arrivalDate"
             [(ngModel)]="selectedTourDetail.arrivalDate"
+            class="arrivalDate"
+            id="id_arrivalDate"
             matInput
+            name="arrivalDate"
             placeholder="Arrival Date">
         </mat-form-field>
       </div>
@@ -47,11 +47,11 @@
           <mat-label>Departure Date&nbsp;</mat-label>
           <input
             #departureDate
-            id="id_departureDate"
-            class="departureDate"
-            name="departureDate"
             [(ngModel)]="selectedTourDetail.departureDate"
+            class="departureDate"
+            id="id_departureDate"
             matInput
+            name="departureDate"
             placeholder="Departure Date">
         </mat-form-field>
       </div>
@@ -63,11 +63,11 @@
           <mat-label>Number Of Days&nbsp;</mat-label>
           <input
             #numberOfDays
-            id="id_numberOfDays"
-            class="numberOfDays"
-            name="numberOfDays"
             [(ngModel)]="selectedTourDetail.numberOfDays"
+            class="numberOfDays"
+            id="id_numberOfDays"
             matInput
+            name="numberOfDays"
             placeholder="Number Of Days">
         </mat-form-field>
       </div>
@@ -76,11 +76,11 @@
           <mat-label>Number Of People&nbsp;</mat-label>
           <input
             #numberOfPeople
-            id="id_numberOfPeople"
-            class="numberOfPeople"
-            name="numberOfPeople"
             [(ngModel)]="selectedTourDetail.numberOfPeople"
+            class="numberOfPeople"
+            id="id_numberOfPeople"
             matInput
+            name="numberOfPeople"
             placeholder="Number Of People">
         </mat-form-field>
       </div>
@@ -93,11 +93,11 @@
           <mat-label>Number Of Children&nbsp;</mat-label>
           <input
             #numberOfChildren
-            id="id_numberOfChildren"
-            class="numberOfChildren"
-            name="numberOfChildren"
             [(ngModel)]="selectedTourDetail.numberOfChildren"
+            class="numberOfChildren"
+            id="id_numberOfChildren"
             matInput
+            name="numberOfChildren"
             placeholder="Number Of Children">
         </mat-form-field>
       </div>
@@ -106,10 +106,10 @@
           <mat-label>Star Category&nbsp;</mat-label>
           <mat-select
             #starCategory
-            id="id_starCategory"
+            [(value)]="selectedTourDetail.starCategory"
             class="starCategory"
-            name="starCategory"
-            [(value)]="selectedTourDetail.starCategory">
+            id="id_starCategory"
+            name="starCategory">
             <mat-option [value]="-1">Unknown</mat-option>
             <mat-option [value]="0">No Stars</mat-option>
             <mat-option [value]="1">1 Star</mat-option>
@@ -130,11 +130,11 @@
           <mat-label>Tour Executive&nbsp;</mat-label>
           <input
             #tourExecutive
-            id="id_tourExecutive"
-            class="tourExecutive"
-            name="tourExecutive"
             [(ngModel)]="selectedTourDetail.tourExecutive"
+            class="tourExecutive"
+            id="id_tourExecutive"
             matInput
+            name="tourExecutive"
             placeholder="Tour Executive">
         </mat-form-field>
       </div>
@@ -144,11 +144,11 @@
           <mat-label>Exchange Rate&nbsp;</mat-label>
           <input
             #exchangeRate
-            id="id_exchangeRate"
-            class="exchangeRate"
-            name="exchangeRate"
             [(ngModel)]="selectedTourDetail.exchangeRate"
+            class="exchangeRate"
+            id="id_exchangeRate"
             matInput
+            name="exchangeRate"
             placeholder="Exchange Rate">
         </mat-form-field>
       </div>
@@ -158,17 +158,21 @@
       <div class="col">
         <mat-form-field appearance="outline">
           <mat-label>Status&nbsp;</mat-label>
-          <input
+          <mat-select
             #status
-            id="id_status"
+            [(value)]="selectedTourDetail.status"
             class="status"
-            name="status"
-            [(ngModel)]="selectedTourDetail.status"
-            matInput
-            placeholder="Status">
+            id="id_status"
+            name="status">
+            <mat-option [value]="'CANCELED'">CANCELED</mat-option>
+            <mat-option [value]="'DEPRECATED'">DEPRECATED</mat-option>
+            <mat-option [value]="'POTENTIAL'">POTENTIAL</mat-option>
+            <mat-option [value]="'CONFIRMED'">CONFIRMED</mat-option>
+            <mat-option [value]="'ARRANGED'">ARRANGED</mat-option>
+            <mat-option [value]="'COMPLETED'">COMPLETED</mat-option>
+          </mat-select>
         </mat-form-field>
       </div>
-      <div class="col"></div>
     </div>
 
 
@@ -178,39 +182,38 @@
           <mat-label>Remarks&nbsp;</mat-label>
           <textarea
             #remarks
-            id="id_remarks"
-            class="remarks"
-            name="remarks"
             [(ngModel)]="selectedTourDetail.remarks"
+            class="remarks"
+            id="id_remarks"
             matInput
+            name="remarks"
             placeholder="Remarks"></textarea>
         </mat-form-field>
       </div>
     </div>
 
 
-    <div class="row" *ngIf="false">
+    <div *ngIf="false" class="row">
       <div class="col">
         <mat-form-field appearance="outline">
           <mat-label>Customer ID&nbsp;</mat-label>
           <input
             #customerId
-            id="id_customerId"
-            class="customerId"
-            name="customerId"
             [(ngModel)]="selectedTourDetail.customerId"
+            class="customerId"
+            id="id_customerId"
             matInput
+            name="customerId"
             placeholder="Customer ID">
         </mat-form-field>
       </div>
     </div>
 
 
-
     <div class="form-button-section">
       <button *ngIf="isAdding" class="btn-form btn-form-submit" mat-raised-button>Save</button>
       <button *ngIf="!isAdding" class="btn-form btn-form-submit" mat-raised-button>Update</button>
-      <button mat-dialog-close class="btn-form" color="warn" mat-raised-button>Cancel</button>
+      <button class="btn-form" color="warn" mat-dialog-close mat-raised-button>Cancel</button>
     </div>
 
   </div>

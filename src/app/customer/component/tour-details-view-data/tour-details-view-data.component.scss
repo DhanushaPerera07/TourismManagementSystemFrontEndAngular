@@ -6,10 +6,10 @@
   font-family: 'Roboto Light', sans-serif;
 }
 
-@mixin add-button-styles {
+@mixin add-button-styles{
   color: white;
   background-color: #0c9463;
-  font-size: clamp(1.6rem, 1vw, 2rem);
+  font-size : clamp(1.6rem,1vw,2rem);
   padding: 1rem;
   border-radius: 10px;
 }
@@ -19,43 +19,45 @@
 // =====================================================================
 
 
-.tour-details-container {
+.tour-details-view-data-container{
   @include font-family-roboto-light;
-  padding-top: 3rem;
-  //padding: 2rem 0;
+  font-size: clamp(1.4rem,1vw,2.4rem);
+  position: relative;
 }
 
+.btn-close{
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #dc3545;
+  color: white;
+  padding: 0;
 
-h5 {
-  font-size: clamp(1.6rem, 1.5vw, 2.4rem);
+}
+
+.header-container{
+  border-bottom: 1px solid yellowgreen;
+}
+
+.tour-details-container{
+  padding: 2rem 0;
+}
+
+h5{
+  font-size: clamp(1.6rem,1.5vw,2.4rem);
   font-weight: bold;
 }
 
-.tour-details-search-table-container {
-  padding: 2rem 0;
+
+.attributes{
+  font-family: Roboto;
 }
 
-.tour-details-table-container {
-  padding: 2rem 0;
+.attributes::after{
+  content: ':';
 }
 
-.search_header_right {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-
-mat-form-field {
-  width: 75%;
-  font-size: clamp(1.6rem, 1vw, 2rem);
-}
-
-
-.btn-add {
-  @include add-button-styles;
-}
-
-.btn-search {
-  margin: 0 0.5rem;
+.tour-details-container>*{
+  padding: 1rem 0;
+  //border-bottom: 1px solid lightsteelblue;
 }

@@ -1,0 +1,124 @@
+<div class="tour-details-view-data-container container">
+  <button class="btn-close" mat-button mat-dialog-close>
+    <mat-icon>close</mat-icon>
+  </button>
+  <div class="header-container">
+    <h5>Tour Details</h5>
+  </div>
+
+  <div class="tour-details-container">
+    <div class="row">
+      <div class="attributes col-4">
+        Tour Detail ID
+      </div>
+      <div class="col-8">
+        CTD00{{ tourDetail.id }}
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="attributes col-4">
+        Number Of Days
+      </div>
+      <div class="col-8 ">
+        {{ tourDetail.numberOfDays }}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="attributes col-4">
+        Number Of People
+      </div>
+      <div class="col-8 ">
+        {{ tourDetail.numberOfPeople }}
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="attributes col-4">
+        Number Of Children
+      </div>
+      <div class="col-8 ">
+        {{ tourDetail.numberOfChildren }}
+      </div>
+    </div>
+
+    <!-- Star Category -->
+    <div class="row">
+      <div class="attributes col-4">
+        Star Category
+      </div>
+      <div class="col-8 ">
+        {{ tourDetail.starCategory }}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="attributes col-4">
+        Arrival Date
+      </div>
+      <div class="col-8 ">
+        {{ tourDetail.arrivalDate | date }}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="attributes col-4">
+        Departure Date
+      </div>
+      <div class="col-8 ">
+        {{ tourDetail.departureDate | date }}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="attributes col-4">
+        Status of the tour
+      </div>
+      <div class="col-8 ">
+        {{ tourDetail.status }}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="attributes col-4">
+        Tour Executive
+      </div>
+      <div class="col-8 ">
+        {{ (tourDetail.tourExecutive) ? tourDetail.tourExecutive : 'None' }}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="attributes col-4">
+        Exchange Rate
+      </div>
+      <div class="col-8 ">
+        {{ tourDetail.exchangeRate }}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="attributes col-4">
+        Remarks
+      </div>
+      <div class="col-8 ">
+        {{ tourDetail.remarks }}
+      </div>
+    </div>
+
+    <div *ngIf="false" class="row">
+      <div class="attributes col-4">
+        Customer ID
+      </div>
+      <div class="col-8 ">
+        {{ tourDetail.customerId }}
+      </div>
+    </div>
+
+  </div>
+
+</div>
+

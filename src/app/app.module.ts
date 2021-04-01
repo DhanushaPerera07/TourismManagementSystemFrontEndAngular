@@ -53,6 +53,9 @@ import { AddEditAccommodationPackageComponent } from './accommodation/component/
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatSelectModule} from '@angular/material/select';
 import { TourDetailsComponent } from './customer/component/tour-details/tour-details.component';
+import { TourDetailsTableComponent } from './customer/component/tour-details-table/tour-details-table.component';
+import { AddEditTourDetailsComponent } from './customer/component/add-edit-tour-details/add-edit-tour-details.component';
+import { TourDetailsViewDataComponent } from './customer/component/tour-details-view-data/tour-details-view-data.component';
 
 @NgModule({
   declarations: [
@@ -88,7 +91,10 @@ import { TourDetailsComponent } from './customer/component/tour-details/tour-det
     AccommodationPackageTableComponent,
     AccommodationPackageViewDataComponent,
     AddEditAccommodationPackageComponent,
-    TourDetailsComponent
+    TourDetailsComponent,
+    TourDetailsTableComponent,
+    AddEditTourDetailsComponent,
+    TourDetailsViewDataComponent
   ],
   imports: [
     BrowserModule,

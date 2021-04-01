@@ -1,0 +1,80 @@
+<div class="tour-details-table-container mat-elevation-z8">
+  <table [dataSource]="dataSource" mat-table matSort>
+
+    <!-- Tour Detail ID Column -->
+    <ng-container matColumnDef="tourDetailID">
+      <th *matHeaderCellDef mat-header-cell mat-sort-header>TourDetailID</th>
+      <td *matCellDef="let element" class="make-cursor-pointer" mat-cell> CTD00{{element.id}} </td>
+    </ng-container>
+
+    <!-- Number Of Days Column -->
+    <ng-container matColumnDef="numberOfDays">
+      <th *matHeaderCellDef mat-header-cell mat-sort-header>#Days</th>
+      <td *matCellDef="let element" class="make-cursor-pointer" mat-cell> {{ element.numberOfDays }} </td>
+    </ng-container>
+
+    <!-- Number Of People Column -->
+    <ng-container matColumnDef="numberOfPeople">
+      <th *matHeaderCellDef mat-header-cell mat-sort-header>#Adult</th>
+      <td *matCellDef="let element" class="make-cursor-pointer" mat-cell> {{element.numberOfPeople}} </td>
+    </ng-container>
+
+    <!-- Number Of Children Column -->
+    <ng-container matColumnDef="numberOfChildren">
+      <th *matHeaderCellDef mat-header-cell mat-sort-header>#Children</th>
+      <td *matCellDef="let element" class="make-cursor-pointer" mat-cell> {{element.numberOfChildren}} </td>
+    </ng-container>
+
+    <!-- Star Category Column -->
+    <ng-container matColumnDef="starCategory">
+      <th *matHeaderCellDef mat-header-cell mat-sort-header>Star Category</th>
+      <td *matCellDef="let element" class="make-cursor-pointer" mat-cell> {{element.starCategory }} </td>
+    </ng-container>
+
+    <!-- Arrival Date Column -->
+    <ng-container matColumnDef="arrivalDate">
+      <th *matHeaderCellDef mat-header-cell mat-sort-header>Arrival Date</th>
+      <td *matCellDef="let element" class="make-cursor-pointer" mat-cell> {{element.arrivalDate | date}} </td>
+    </ng-container>
+
+    <!-- Departure Date Column -->
+    <ng-container matColumnDef="departureDate">
+      <th *matHeaderCellDef mat-header-cell mat-sort-header>Departure Date</th>
+      <td *matCellDef="let element" class="make-cursor-pointer" mat-cell> {{element.departureDate | date}} </td>
+    </ng-container>
+
+    <!-- Status Column -->
+    <ng-container matColumnDef="status">
+      <th *matHeaderCellDef mat-header-cell mat-sort-header>Status</th>
+      <td *matCellDef="let element" class="make-cursor-pointer" mat-cell> {{ element.status | titlecase }} </td>
+    </ng-container>
+
+    <!-- Tour Executive Column -->
+    <ng-container matColumnDef="tourExecutive">
+      <th *matHeaderCellDef mat-header-cell mat-sort-header>Tour Executive</th>
+      <td *matCellDef="let element" class="make-cursor-pointer"
+          mat-cell> {{(element.tourExecutive) ? element.tourExecutive : 'None'}} </td>
+    </ng-container>
+
+
+    <!-- Options column -->
+    <ng-container matColumnDef="options">
+      <th *matHeaderCellDef mat-header-cell>Options</th>
+      <td *matCellDef="let element" mat-cell>
+        <div (click)="$event.stopPropagation();" class="accommodation_package_table_options">
+          <i (click)="editRecord(element);" class="bi bi-pencil-square icon-size icon-edit"></i>
+          <i (click)="deleteRecord(element.id);" class="bi bi-trash icon-size icon-delete"></i>
+        </div>
+      </td>
+    </ng-container>
+
+    <tr *matHeaderRowDef="displayedColumns; sticky: true" mat-header-row></tr>
+    <tr (click)="viewAccommodationRecord(row);" *matRowDef="let row; columns: displayedColumns;" mat-row></tr>
+
+    <!-- Row shown when there is no matching data. -->
+    <tr *matNoDataRow class="mat-row">
+      <td [colSpan]="displayedColumns.length" class="mat-cell make-text-align">No records found</td>
+    </tr>
+  </table>
+  <mat-paginator [pageSizeOptions]="[5,10,20,50,100]" [pageSize]="5" showFirstLastButtons></mat-paginator>
+</div>

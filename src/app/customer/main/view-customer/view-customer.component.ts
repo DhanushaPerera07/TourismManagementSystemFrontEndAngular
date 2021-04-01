@@ -1,19 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Customer} from '../../../shared/interface/customer';
 import {CustomerService} from '../../../shared/service/customer.service';
+import {ActivatedRoute, Router} from '@angular/router';
 
-export let customerVariable: Customer;
-
-// const customer: Customer = {
-//   id: 1,
-//   name: 'John Doe',
-//   nationality: 'American',
-//   passportNo: '1234567A',
-//   email: 'john.doe@gmail.com',
-//   phone: '2025550152 ',
-//   country: 'America',
-//   addedDate: new Date(Date.now())
-// };
 
 @Component({
   selector: 'app-view-customer',
@@ -22,10 +11,26 @@ export let customerVariable: Customer;
 })
 export class ViewCustomerComponent implements OnInit {
 
-  customer: Customer;
+  customer!: Customer;
 
-  constructor(private customerService: CustomerService) {
-    this.customer = this.customerService.customer;
+  constructor(private router: Router,
+              private activatedRoute: ActivatedRoute,
+              private customerService: CustomerService) {
+    this.activatedRoute.params.subscribe(value => {
+      const id = Number.parseInt(value.id, 10);
+      if (Number.isInteger(id)) {
+        const result = this.customerService.findCustomerById(id);
+        if (result) {
+          this.customer = result;
+        } else {
+          /* no customer found for that given ID */
+          this.router.navigateByUrl('/customer');
+        }
+      } else {
+        /* id is invalid (not an number) */
+        this.router.navigateByUrl('/customer');
+      }
+    });
   }
 
   ngOnInit(): void {

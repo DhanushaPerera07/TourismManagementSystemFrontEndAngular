@@ -52,6 +52,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { AddEditAccommodationPackageComponent } from './accommodation/component/accommodation-package/add-edit-accommodation-package/add-edit-accommodation-package.component';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatSelectModule} from '@angular/material/select';
+import { TourDetailsComponent } from './customer/component/tour-details/tour-details.component';
 
 @NgModule({
   declarations: [
@@ -86,7 +87,8 @@ import {MatSelectModule} from '@angular/material/select';
     AccommodationPackageSearchTableComponent,
     AccommodationPackageTableComponent,
     AccommodationPackageViewDataComponent,
-    AddEditAccommodationPackageComponent
+    AddEditAccommodationPackageComponent,
+    TourDetailsComponent
   ],
   imports: [
     BrowserModule,

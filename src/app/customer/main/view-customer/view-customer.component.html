@@ -1,6 +1,17 @@
 <app-main-nav></app-main-nav>
 <app-breadcrumb></app-breadcrumb>
-<div class="container">
-  <!-- View customer details -->
-  <app-customer-view-data [customer]="this.customer"></app-customer-view-data>
+
+<div class="view-customer-container">
+  <div class="container">
+    <mat-tab-group animationDuration="0ms">
+      <mat-tab label="View Customer Details">
+        <!-- View customer details -->
+        <app-customer-view-data [customer]="this.customer"></app-customer-view-data>
+      </mat-tab>
+      <mat-tab label="Tour details">
+        <!-- Tour details -->
+        <app-tour-details></app-tour-details>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
 </div>

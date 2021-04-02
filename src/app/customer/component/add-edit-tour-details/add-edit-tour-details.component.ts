@@ -36,4 +36,8 @@ export class AddEditTourDetailsComponent implements OnInit {
   redirectToCustomerPage(): void {
     this.router.navigateByUrl('/customer');
   }
+
+  sayHello(): void {
+    alert('Hello there!');
+  }
 }
